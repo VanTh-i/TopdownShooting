@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Spawner : ThaiBehaviour
+public abstract class ObjectPooling : ThaiBehaviour
 {
     [SerializeField] protected List<Transform> prefabs;
-    [SerializeField] protected List<Transform> poolObjs;
-    protected Transform poolHolder;
+    [SerializeField] public List<Transform> poolObjs;
+    [HideInInspector] public Transform poolHolder;
 
     protected override void LoadComponents()
     {
@@ -46,19 +46,34 @@ public abstract class Spawner : ThaiBehaviour
         }
         poolHolder = transform.Find("Pool");
     }
-    // public virtual void DestroyBullet(Transform obj)
-    // {
-    //     poolObjs.Add(obj);
-    //     obj.gameObject.SetActive(false);
-    // }
-
-    public virtual Transform Spawn(Vector3 spawnPos, Quaternion rotation, int prefabIndex)
+    public virtual void DeSpawn(Transform obj)
     {
-        Transform prefab = this.prefabs[prefabIndex];
-        Transform bullet = GetObjectFromPool(prefab);
-        bullet.SetPositionAndRotation(spawnPos, rotation);
-        bullet.parent = poolHolder;
-        return bullet;
+        poolObjs.Add(obj);
+        obj.gameObject.SetActive(false);
+    }
+
+    public virtual Transform Spawn(Vector3 spawnPos, Quaternion rotation, int index)
+    {
+        Transform prefab = this.prefabs[index];
+        Transform obj = GetObjectFromPool(prefab);
+        obj.SetPositionAndRotation(spawnPos, rotation);
+        obj.parent = poolHolder;
+        return obj;
+    }
+
+    public virtual Transform Spawn(Vector3 spawnPos, Quaternion rotation)
+    {
+        Transform prefab = this.prefabs[RandomPrefab()];
+        Transform obj = GetObjectFromPool(prefab);
+        obj.SetPositionAndRotation(spawnPos, rotation);
+        obj.parent = poolHolder;
+        return obj;
+    }
+
+    public virtual int RandomPrefab()
+    {
+        int rand = Random.Range(0, prefabs.Count);
+        return rand;
     }
 
     protected virtual Transform GetObjectFromPool(Transform prefab)

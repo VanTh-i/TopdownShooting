@@ -2,22 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawningEnemy : MonoBehaviour
+public class SpawningEnemy : ThaiBehaviour
 {
+    protected Transform player;
+    protected float maxDistance = 20f;
+    protected override void LoadComponents()
+    {
+        player = GameObject.Find("Player").GetComponent<Transform>();
+    }
     private void Start()
     {
-        SpawnEnemy();
+        StartCoroutine(SpawnEnemy());
     }
 
-    protected virtual void SpawnEnemy()
+    protected IEnumerator SpawnEnemy()
     {
-        float randomPosX = Random.Range(-10, 10);
-        float randomPosY = Random.Range(-10, 10);
-        Vector3 spawnPos = new Vector3(randomPosX, randomPosY, 0);
-        Quaternion rot = transform.rotation;
-        Transform enemy = EnemySpawn.Instance.Spawn(spawnPos, rot, 0);
-        enemy.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        while (true)
+        {
+            float randomPosX = player.position.x + Random.Range(-maxDistance, maxDistance);
+            float randomPosY = player.position.y + Random.Range(-maxDistance, maxDistance);
+            Vector3 spawnPos = new Vector3(randomPosX, randomPosY, player.position.z);
+            Quaternion rot = transform.rotation;
 
-        Invoke(nameof(SpawnEnemy), 1f);
+            Transform enemy = EnemySpawn.Instance.Spawn(spawnPos, rot);
+            enemy.gameObject.SetActive(true);
+
+            yield return new WaitForSeconds(2f);
+        }
     }
 }

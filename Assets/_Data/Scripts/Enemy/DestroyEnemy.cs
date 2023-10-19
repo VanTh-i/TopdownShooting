@@ -6,6 +6,6 @@ public class DestroyEnemy : DestroyByDistance
 {
     protected override void DestroyObject()
     {
-        EnemySpawn.Instance.DestroyEnemy(transform.parent);
+        EnemySpawn.Instance.DeSpawn(transform.parent);
     }
 }

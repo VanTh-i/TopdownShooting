@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawn : Spawner
+public class EnemySpawn : ObjectPooling
 {
     private static EnemySpawn instance;
     public static EnemySpawn Instance { get => instance; }
@@ -11,11 +11,5 @@ public class EnemySpawn : Spawner
     {
         base.Awake();
         instance = this;
-    }
-
-    public virtual void DestroyEnemy(Transform obj)
-    {
-        poolObjs.Add(obj);
-        obj.gameObject.SetActive(false);
     }
 }

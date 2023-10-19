@@ -24,6 +24,6 @@ public class DamageSender : MonoBehaviour
 
     protected virtual void DestroyObject()
     {
-        BulletSpawn.Instance.DestroyBullet(transform.parent);
+        BulletSpawn.Instance.DeSpawn(transform.parent);
     }
 }

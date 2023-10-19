@@ -12,7 +12,7 @@ public class DamageReceiver : MonoBehaviour
     protected bool isDead = false;
 
 
-    private void Start()
+    private void OnEnable()
     {
         Reborn();
     }
@@ -68,6 +68,6 @@ public class DamageReceiver : MonoBehaviour
 
     protected virtual void Kill()
     {
-        EnemySpawn.Instance.DestroyEnemy(transform.parent);
+        // for override
     }
 }

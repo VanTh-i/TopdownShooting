@@ -21,8 +21,8 @@ public class PlayerShooting : MonoBehaviour
         }
         else if (Time.time >= shootTime + shootDelay) //delay shoot
         {
-            Vector3 spawnPos = transform.parent.position;
-            Quaternion rot = transform.parent.rotation;
+            Vector3 spawnPos = transform.position;
+            Quaternion rot = transform.rotation;
             Transform bullet = BulletSpawn.Instance.Spawn(spawnPos, rot, 0);
             bullet.gameObject.SetActive(true);
 

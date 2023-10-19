@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletSpawn : Spawner
+public class BulletSpawn : ObjectPooling
 {
     private static BulletSpawn instance;
     public static BulletSpawn Instance { get => instance; }
@@ -11,12 +11,6 @@ public class BulletSpawn : Spawner
     {
         base.Awake();
         instance = this;
-    }
-
-    public virtual void DestroyBullet(Transform obj)
-    {
-        poolObjs.Add(obj);
-        obj.gameObject.SetActive(false);
     }
 
 }

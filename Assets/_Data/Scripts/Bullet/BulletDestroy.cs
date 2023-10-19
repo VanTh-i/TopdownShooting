@@ -6,6 +6,6 @@ public class BulletDestroy : DestroyByDistance
 {
     protected override void DestroyObject()
     {
-        BulletSpawn.Instance.DestroyBullet(transform.parent);
+        BulletSpawn.Instance.DeSpawn(transform.parent);
     }
 }
