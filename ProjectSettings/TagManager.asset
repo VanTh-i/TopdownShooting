@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Prop
+  - ShootPoint
+  - Enemy
+  - Rock
   layers:
   - Default
   - TransparentFX
@@ -40,4 +44,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Back
+    uniqueID: 465502817
+    locked: 0
+  - name: Mid
+    uniqueID: 999778441
+    locked: 0
+  - name: Front
+    uniqueID: 468508245
     locked: 0
