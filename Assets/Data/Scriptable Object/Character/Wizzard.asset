@@ -15,4 +15,4 @@ MonoBehaviour:
   startingWeapon: {fileID: 0}
   maxHp: 100
   recovery: 0
-  speed: 20
+  speed: 5

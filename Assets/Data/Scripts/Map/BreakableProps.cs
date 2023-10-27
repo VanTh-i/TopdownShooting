@@ -22,6 +22,6 @@ public class BreakableProps : MonoBehaviour
     }
     private void Kill()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

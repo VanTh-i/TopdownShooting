@@ -116,8 +116,6 @@ public class MapController : ThaiBehaviour
         GameObject chunk = Instantiate(terrainChunks[random], noTerrainPosition, Quaternion.identity);
         chunk.transform.parent = poolHolder;
         spawnerChunk.Add(chunk);
-        //Transform map = MapSpawn.Instance.Spawn(noTerrainPosition, Quaternion.identity);
-        //map.gameObject.SetActive(true);
     }
 
     private void DeSpawnChunk()
