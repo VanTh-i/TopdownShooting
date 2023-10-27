@@ -7,8 +7,8 @@ using UnityEngine;
 public class CharacterScriptableObjects : ScriptableObject
 {
     [SerializeField]
-    private GameObject startingWeapon;
-    public GameObject StartingWeapon { get => startingWeapon; private set => startingWeapon = value; }
+    private GameObject character;
+    public GameObject Character { get => character; private set => character = value; }
 
     [SerializeField]
     private int maxHp;

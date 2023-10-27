@@ -26,9 +26,15 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
+        characterStats = CharacterSelector.GetData();
+        CharacterSelector.Instance.DestroySingleton();
+
+        //Instantiate(characterStats.Character);
+
         currentMaxHp = characterStats.MaxHp;
         currentRecovery = characterStats.Recovery;
         currentSpeed = characterStats.Speed;
+
     }
 
     private void Start()

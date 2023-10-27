@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class CharacterSelector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static CharacterSelector instance;
+    public static CharacterSelector Instance { get => instance; }
+
+    public CharacterScriptableObjects characterData;
+
+    private void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public static CharacterScriptableObjects GetData()
     {
-        
+        return instance.characterData;
+    }
+    public void SelectCharacter(CharacterScriptableObjects character)
+    {
+        characterData = character;
+    }
+
+    public void DestroySingleton()
+    {
+        instance = null;
+        Destroy(gameObject);
     }
 }
