@@ -11,12 +11,12 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField] private float speed;
     public float Speed { get => speed; private set => speed = value; }
 
-    [SerializeField] private float shootDelay;
-    public float ShootDelay { get => shootDelay; private set => shootDelay = value; }
+    [SerializeField] private float hitDelay;
+    public float HitDelay { get => hitDelay; private set => hitDelay = value; }
 
     [SerializeField] private int pierce; // dam xuyen ke thu
     public int Pierce { get => pierce; private set => pierce = value; }
 
-    [SerializeField] private int range;
-    public int Range { get => range; private set => range = value; }
+    [SerializeField] private float range;
+    public float Range { get => range; private set => range = value; }
 }

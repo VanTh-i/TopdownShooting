@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WizzardMagic : WeaponController
 {
+    public Animator animator;
     protected override void Attack()
     {
         if (!InputManager.Instance.OnFiring)
@@ -11,6 +12,13 @@ public class WizzardMagic : WeaponController
             return;
         }
         base.Attack();
+        animator.SetTrigger("Attack");
+
+
+    }
+
+    public void CastFireBall()
+    {
         Vector3 spawnPos = transform.position;
         Quaternion rot = transform.rotation;
         Transform bullet = BulletSpawn.Instance.Spawn(spawnPos, rot, 0);

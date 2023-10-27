@@ -7,11 +7,16 @@ public class WeaponController : ThaiBehaviour
 {
     [Header("Weapon Stats")]
     public WeaponScriptableObject weaponStats;
-    private float currCooldown;
+    [HideInInspector] public int currDamage;
+    [HideInInspector] public float currHitCooldown;
+    [HideInInspector] public float currRange;
 
-    protected virtual void Start()
+    protected override void Awake()
     {
-        currCooldown = weaponStats.ShootDelay;
+        base.Awake();
+        currHitCooldown = weaponStats.HitDelay;
+        currDamage = weaponStats.Damage;
+        currRange = weaponStats.Range;
     }
     protected virtual void Update()
     {
@@ -20,8 +25,8 @@ public class WeaponController : ThaiBehaviour
 
     protected virtual void CanAttack()
     {
-        currCooldown -= Time.deltaTime;
-        if (currCooldown <= 0f)
+        currHitCooldown -= Time.deltaTime;
+        if (currHitCooldown <= 0f)
         {
             Attack();
         }
@@ -29,6 +34,6 @@ public class WeaponController : ThaiBehaviour
 
     protected virtual void Attack()
     {
-        currCooldown = weaponStats.ShootDelay;
+        currHitCooldown = weaponStats.HitDelay;
     }
 }

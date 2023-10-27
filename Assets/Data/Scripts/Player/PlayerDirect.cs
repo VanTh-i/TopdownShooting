@@ -6,6 +6,8 @@ public class PlayerDirect : ThaiBehaviour
 {
     protected Vector3 targetPosition;
 
+    public WizzardMagic wizzardMagic;
+
     private void FixedUpdate()
     {
         GetMousePos();
@@ -31,5 +33,9 @@ public class PlayerDirect : ThaiBehaviour
             aimDir.x = -1f;
         }
         transform.localScale = aimDir;
+    }
+    public void GetCastMagic()
+    {
+        wizzardMagic.CastFireBall();
     }
 }

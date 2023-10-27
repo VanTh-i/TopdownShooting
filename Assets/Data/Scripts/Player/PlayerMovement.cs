@@ -8,13 +8,13 @@ using UnityEngine;
 
 public class PlayerMovement : ThaiBehaviour
 {
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
     private BoxCollider2D box2d;
     protected Transform shootPoint;
     protected Vector3 targetPosition;
     [HideInInspector] public Vector2 moveDir;
 
-    private PlayerStats playerStats;
+    protected PlayerStats playerStats;
 
 
     protected override void LoadComponents()
@@ -25,7 +25,7 @@ public class PlayerMovement : ThaiBehaviour
         LoadRigidbody();
     }
 
-    private void LoadRigidbody()
+    protected virtual void LoadRigidbody()
     {
         if (rb != null) return;
         rb = GetComponent<Rigidbody2D>();
@@ -33,7 +33,7 @@ public class PlayerMovement : ThaiBehaviour
         rb.freezeRotation = true;
     }
 
-    private void LoadCollider()
+    protected virtual void LoadCollider()
     {
         if (box2d != null) return;
         box2d = GetComponent<BoxCollider2D>();
@@ -52,7 +52,7 @@ public class PlayerMovement : ThaiBehaviour
         targetPosition.z = 0;
     }
 
-    private void Moving()
+    protected virtual void Moving()
     {
         moveDir = InputManager.Instance.MoveDir;
 

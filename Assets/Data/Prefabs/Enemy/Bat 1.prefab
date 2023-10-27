@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3078066447260828686}
   - component: {fileID: 7295315666614432269}
   - component: {fileID: 3404374480958402346}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bat 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: cf7694603c564424bbc642ce8e685dd4, type: 2}
   currentDamage: 0
+  currentMaxHp: 0
   currentSpeed: 0
   currentAttackRange: 0
 --- !u!114 &3404374480958402346
@@ -156,7 +157,7 @@ GameObject:
   - component: {fileID: 3078066447270047684}
   - component: {fileID: 3078066447270047683}
   - component: {fileID: 2723467976075021434}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HP (receiver dmg)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +192,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
-  enemyStats: {fileID: 11400000, guid: cf7694603c564424bbc642ce8e685dd4, type: 2}
 --- !u!58 &2723467976075021434
 CircleCollider2D:
   m_ObjectHideFlags: 0
