@@ -14,13 +14,13 @@ public class PlayerMovement : ThaiBehaviour
     protected Vector3 targetPosition;
     [HideInInspector] public Vector2 moveDir;
 
-    [Header("Weapon Stats")]
-    public CharacterScriptableObjects characterStats;
+    private PlayerStats playerStats;
 
 
     protected override void LoadComponents()
     {
         shootPoint = GameObject.FindGameObjectWithTag("ShootPoint").GetComponent<Transform>();
+        playerStats = GetComponent<PlayerStats>();
         LoadCollider();
         LoadRigidbody();
     }
@@ -74,6 +74,6 @@ public class PlayerMovement : ThaiBehaviour
         shootPoint.localScale = aimDir;
 
         //moving
-        rb.velocity = new Vector2(moveDir.x * characterStats.Speed, moveDir.y * characterStats.Speed);
+        rb.velocity = new Vector2(moveDir.x * playerStats.currentSpeed, moveDir.y * playerStats.currentSpeed);
     }
 }

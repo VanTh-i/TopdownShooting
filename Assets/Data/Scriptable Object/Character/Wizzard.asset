@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingWeapon: {fileID: 0}
   maxHp: 100
-  recovery: 0
-  speed: 5
+  recovery: 1
+  speed: 3

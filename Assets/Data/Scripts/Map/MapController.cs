@@ -32,7 +32,7 @@ public class MapController : ThaiBehaviour
     private void Update()
     {
         ChunkCheker();
-        DeSpawnChunk();
+        //DeSpawnChunk();
     }
 
     private void ChunkCheker()
@@ -115,7 +115,7 @@ public class MapController : ThaiBehaviour
         int random = Random.Range(0, terrainChunks.Count);
         GameObject chunk = Instantiate(terrainChunks[random], noTerrainPosition, Quaternion.identity);
         chunk.transform.parent = poolHolder;
-        spawnerChunk.Add(chunk);
+        //spawnerChunk.Add(chunk);
     }
 
     private void DeSpawnChunk()

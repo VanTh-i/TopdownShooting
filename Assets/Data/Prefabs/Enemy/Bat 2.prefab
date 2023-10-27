@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 2649209589889497082}
   - component: {fileID: 767564300347000629}
   - component: {fileID: 2530140512257293018}
+  - component: {fileID: 7068539946468549626}
   - component: {fileID: 4485190624399006966}
   m_Layer: 0
   m_Name: Bat 2
@@ -172,6 +173,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7068539946468549626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413203333908883762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676ee6f5ac0c2fd4697b058c6f7ba6d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: cf7694603c564424bbc642ce8e685dd4, type: 2}
+  currentDamage: 0
+  currentSpeed: 0
+  currentAttackRange: 0
 --- !u!114 &4485190624399006966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24dfc3c4dfc2854dbbccb35830bcbbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStats: {fileID: 11400000, guid: cf7694603c564424bbc642ce8e685dd4, type: 2}
 --- !u!58 &4727337830054167468
 CircleCollider2D:
   m_ObjectHideFlags: 0

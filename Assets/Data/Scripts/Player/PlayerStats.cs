@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    [Header("Stats")]
     public CharacterScriptableObjects characterStats;
-    [SerializeField] private int currentMaxHp;
-    private int currentRecovery;
-    private float currentSpeed;
+    public int currentMaxHp;
+    [HideInInspector] public int currentRecovery;
+    [HideInInspector] public float currentSpeed;
     [Header("Level/Exp")]
     public int experience = 0;
     public int level = 1;
@@ -33,6 +34,8 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         experienceCap = levelRanges[0].experienceCapIncrease; //khoi tao experienceCap tai lv dau tien
+        InvokeRepeating("Recovery", 0f, 2f); // tu hoi phuc moi 2s
+
     }
 
     public void IncreaseExperience(int amount)
@@ -80,6 +83,19 @@ public class PlayerStats : MonoBehaviour
         if (currentMaxHp < characterStats.MaxHp)
         {
             currentMaxHp += amount;
+
+            if (currentMaxHp > characterStats.MaxHp)
+            {
+                currentMaxHp = characterStats.MaxHp;
+            }
+        }
+    }
+    private void Recovery()
+    {
+        if (currentMaxHp < characterStats.MaxHp)
+        {
+            currentMaxHp += currentRecovery;
+
             if (currentMaxHp > characterStats.MaxHp)
             {
                 currentMaxHp = characterStats.MaxHp;

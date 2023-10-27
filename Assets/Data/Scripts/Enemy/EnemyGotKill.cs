@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EnemyGotKill : DamageReceiver
 {
-    public EnemyScriptableObject enemyStats;
+    protected EnemyStats enemyStats;
 
     protected override void Awake()
     {
         base.Awake();
-        currentHp = enemyStats.MaxHp;
+        enemyStats = GetComponentInParent<EnemyStats>();
+        currentHp = enemyStats.currentMaxHp;
     }
     protected override void Kill()
     {

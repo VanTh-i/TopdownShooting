@@ -42,11 +42,11 @@ public class MagicBehaviour : DamageSender
     }
     private void OnDisable() //tao ra vu no sau khi dan va cham
     {
-        Transform explosion = FxSpawn.Instance.Spawn(transform.position, transform.rotation, 1);
-        explosion.gameObject.SetActive(true);
+
     }
     protected virtual void SpawnExplosion()
     {
-
+        Transform explosion = FxSpawn.Instance.Spawn(transform.position, transform.rotation, 1);
+        explosion.gameObject.SetActive(true);
     }
 }

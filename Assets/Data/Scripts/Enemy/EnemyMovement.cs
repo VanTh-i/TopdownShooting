@@ -4,23 +4,14 @@ using UnityEngine;
 
 public class EnemyMovement : ThaiBehaviour
 {
-    public EnemyScriptableObject enemyStats;
-    protected int currentDamage;
-    protected float currentSpeed;
-    protected int currentAttackRange;
+    protected EnemyStats enemyStats;
 
     protected Transform player;
     protected Transform enemyDir;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        currentDamage = enemyStats.Damage;
-        currentSpeed = enemyStats.Speed;
-        currentAttackRange = enemyStats.AttackRange;
-    }
     protected override void LoadComponents()
     {
+        enemyStats = GetComponentInParent<EnemyStats>();
         player = GameObject.Find("Player").GetComponent<Transform>();
         enemyDir = transform.parent.GetComponent<Transform>();
     }
@@ -38,9 +29,9 @@ public class EnemyMovement : ThaiBehaviour
     {
         transform.LookAt(player);
 
-        if (Vector3.Distance(transform.parent.position, player.position) >= currentAttackRange)
+        if (Vector3.Distance(transform.parent.position, player.position) >= enemyStats.currentAttackRange)
         {
-            transform.parent.position += transform.forward * currentSpeed * Time.deltaTime;
+            transform.parent.position += transform.forward * enemyStats.currentSpeed * Time.deltaTime;
         }
         else
         {

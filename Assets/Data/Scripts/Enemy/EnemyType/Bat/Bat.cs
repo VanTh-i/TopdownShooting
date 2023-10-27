@@ -20,7 +20,7 @@ public class Bat : EnemyMovement
             {
                 Debug.Log("get hit");
                 PlayerStats player = other.gameObject.GetComponent<PlayerStats>();
-                player.TakeDamage(currentDamage);
+                player.TakeDamage(enemyStats.currentDamage);
                 lastCollisionTime = Time.time;
             }
         }
