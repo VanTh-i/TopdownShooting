@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class WizzardMagic : WeaponController
 {
-    public Animator animator;
+    protected Animator animator;
+    protected Transform shootPoint;
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        animator = GetComponent<Animator>();
+        shootPoint = GameObject.FindGameObjectWithTag("ShootPoint").transform;
+    }
     protected override void Attack()
     {
         if (!InputManager.Instance.OnFiring)
@@ -13,14 +21,12 @@ public class WizzardMagic : WeaponController
         }
         base.Attack();
         animator.SetTrigger("Attack");
-
-
     }
 
-    public void CastFireBall()
+    public void CastFireBall() //cast phep trong animation
     {
-        Vector3 spawnPos = transform.position;
-        Quaternion rot = transform.rotation;
+        Vector3 spawnPos = shootPoint.transform.position;
+        Quaternion rot = shootPoint.transform.rotation;
         Transform bullet = BulletSpawn.Instance.Spawn(spawnPos, rot, 0);
         bullet.gameObject.SetActive(true);
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edadd7e4abe34d74298e5d2d07e3e219, type: 3}
   m_Name: Wizzard
   m_EditorClassIdentifier: 
-  character: {fileID: 4816171750847966296, guid: 698c161e0fce2fd41a748a555e8e378d, type: 3}
+  character: {fileID: 6679592819448805699, guid: 7414843a82cfb5b4a8e95fe59c38265a, type: 3}
   maxHp: 100
   recovery: 1
   speed: 3

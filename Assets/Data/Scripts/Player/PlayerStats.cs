@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -29,12 +30,11 @@ public class PlayerStats : MonoBehaviour
         characterStats = CharacterSelector.GetData();
         CharacterSelector.Instance.DestroySingleton();
 
-        //Instantiate(characterStats.Character);
-
         currentMaxHp = characterStats.MaxHp;
         currentRecovery = characterStats.Recovery;
         currentSpeed = characterStats.Speed;
 
+        SpawnCharacter(characterStats.Character);
     }
 
     private void Start()
@@ -107,5 +107,11 @@ public class PlayerStats : MonoBehaviour
                 currentMaxHp = characterStats.MaxHp;
             }
         }
+    }
+
+    public void SpawnCharacter(GameObject model)
+    {
+        GameObject spawnModel = Instantiate(model, transform.position, quaternion.identity);
+        spawnModel.transform.SetParent(transform);
     }
 }

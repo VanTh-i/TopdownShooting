@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8298736229816859695}
-  - component: {fileID: 5466266097924416892}
   m_Layer: 0
-  m_Name: Wizzard Weapon
+  m_Name: Player Direction
   m_TagString: ShootPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,23 +31,6 @@ Transform:
   m_Father: {fileID: 4816171750847966276}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5466266097924416892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1581920553957164966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e1a17459d21574592fa9d2b08dbc68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponStats: {fileID: 11400000, guid: 4cceb29f2818e5942848998592618bda, type: 2}
-  currDamage: 0
-  currHitCooldown: 0
-  currRange: 0
-  animator: {fileID: 4816171750295040248}
 --- !u!1 &4816171750295040254
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +43,7 @@ GameObject:
   - component: {fileID: 4816171750295040251}
   - component: {fileID: 4816171750295040248}
   - component: {fileID: 4816171750295040250}
+  - component: {fileID: 3625790716676935300}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -168,7 +151,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31664c7f7b1ff1144a49c57ed6b951cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wizzardMagic: {fileID: 5466266097924416892}
+--- !u!114 &3625790716676935300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816171750295040254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e1a17459d21574592fa9d2b08dbc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponStats: {fileID: 11400000, guid: 4cceb29f2818e5942848998592618bda, type: 2}
+  currDamage: 0
+  currHitCooldown: 0
+  currRange: 0
 --- !u!1 &4816171750847966296
 GameObject:
   m_ObjectHideFlags: 0

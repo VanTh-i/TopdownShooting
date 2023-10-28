@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class WarriorAttack : WeaponController
 {
-    public Animator animator;
-    [SerializeField] protected Transform attackPoint;
+    protected Animator animator;
+    protected Transform attackPoint;
     public LayerMask enemyLayer;
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        animator = GetComponent<Animator>();
+        attackPoint = GameObject.FindGameObjectWithTag("ShootPoint").transform;
+    }
 
     protected override void Attack()
     {

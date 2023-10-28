@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 2192646763398164361}
   - component: {fileID: 2192646763398164362}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,7 +312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31664c7f7b1ff1144a49c57ed6b951cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wizzardMagic: {fileID: 0}
 --- !u!114 &2192646763618295387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2192646764030538556}
   m_Layer: 0
-  m_Name: MouseDir
+  m_Name: Player Direction
   m_TagString: ShootPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

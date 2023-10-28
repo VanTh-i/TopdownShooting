@@ -56,7 +56,7 @@ public class PlayerMovement : ThaiBehaviour
     {
         moveDir = InputManager.Instance.MoveDir;
 
-        //look at mouse position
+        //nhin ve huong con chuot
         Vector3 diff = targetPosition - transform.position;
         diff.Normalize();
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
