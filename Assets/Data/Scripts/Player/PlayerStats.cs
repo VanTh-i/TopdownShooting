@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -27,14 +26,14 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
-        characterStats = CharacterSelector.GetData();
-        CharacterSelector.Instance.DestroySingleton();
+        // characterStats = CharacterSelector.GetData();
+        // CharacterSelector.Instance.DestroySingleton();
 
         currentMaxHp = characterStats.MaxHp;
         currentRecovery = characterStats.Recovery;
         currentSpeed = characterStats.Speed;
 
-        SpawnCharacter(characterStats.Character);
+        //SpawnCharacter(characterStats.Character);
     }
 
     private void Start()
@@ -111,7 +110,7 @@ public class PlayerStats : MonoBehaviour
 
     public void SpawnCharacter(GameObject model)
     {
-        GameObject spawnModel = Instantiate(model, transform.position, quaternion.identity);
+        GameObject spawnModel = Instantiate(model, transform.position, Quaternion.identity);
         spawnModel.transform.SetParent(transform);
     }
 }

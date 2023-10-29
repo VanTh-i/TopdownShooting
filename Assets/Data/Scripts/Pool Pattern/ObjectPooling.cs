@@ -52,7 +52,7 @@ public abstract class ObjectPooling : ThaiBehaviour
         obj.gameObject.SetActive(false);
     }
 
-    public virtual Transform Spawn(Vector3 spawnPos, Quaternion rotation, int index)
+    public virtual Transform Spawn(Vector3 spawnPos, Quaternion rotation, int index)//spawn 1 obj nhat dinh
     {
         Transform prefab = this.prefabs[index];
         Transform obj = GetObjectFromPool(prefab);
@@ -61,7 +61,16 @@ public abstract class ObjectPooling : ThaiBehaviour
         return obj;
     }
 
-    public virtual Transform Spawn(Vector3 spawnPos, Quaternion rotation)
+    public virtual Transform Spawn(Transform enemyPrefab, Vector3 spawnPos, Quaternion rotation)//spawn enemy
+    {
+        Transform prefab = enemyPrefab;
+        Transform obj = GetObjectFromPool(prefab);
+        obj.SetPositionAndRotation(spawnPos, rotation);
+        obj.parent = poolHolder;
+        return obj;
+    }
+
+    public virtual Transform Spawn(Vector3 spawnPos, Quaternion rotation)//spawn random obj
     {
         Transform prefab = this.prefabs[RandomPrefab()];
         Transform obj = GetObjectFromPool(prefab);

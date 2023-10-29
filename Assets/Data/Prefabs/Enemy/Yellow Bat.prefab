@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7295315666614432269}
   - component: {fileID: 3404374480958402346}
   m_Layer: 7
-  m_Name: Bat 1
+  m_Name: Yellow Bat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

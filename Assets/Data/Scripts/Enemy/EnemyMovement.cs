@@ -12,8 +12,12 @@ public class EnemyMovement : ThaiBehaviour
     protected override void LoadComponents()
     {
         enemyStats = GetComponentInParent<EnemyStats>();
-        player = GameObject.Find("Player").GetComponent<Transform>();
         enemyDir = transform.parent.GetComponent<Transform>();
+        player = FindPlayer.GetPlayer();
+        if (player == null)
+        {
+            Debug.LogError("Can not find player");
+        }
     }
 
     private void Update()

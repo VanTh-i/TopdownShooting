@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class DestroyByDistance : Destroy
 {
-    [SerializeField] protected float maxDistance = 40f;
-    protected float distance = 0f;
+    public WeaponController weaponController;
+    protected float maxDistance;
+    //protected float distance = 0f;
     protected Camera mainCam;
 
     protected override void LoadComponents()
     {
         LoadCamera();
+        weaponController = FindObjectOfType<WeaponController>();
+        maxDistance = weaponController.currRange;
     }
 
     protected virtual void LoadCamera()
@@ -24,7 +27,7 @@ public class DestroyByDistance : Destroy
 
     protected override bool CanDestroy()
     {
-        distance = Vector3.Distance(transform.position, mainCam.transform.position);
+        float distance = Vector3.Distance(transform.position, mainCam.transform.position);
         if (distance >= maxDistance)
         {
             return true;

@@ -27,7 +27,11 @@ public class MapController : ThaiBehaviour
         }
         poolHolder = transform.Find("Pool");
 
-        player = GameObject.Find("Player").GetComponent<Transform>();
+        player = FindPlayer.GetPlayer();
+        if (player == null)
+        {
+            Debug.LogError("Can not find player");
+        }
     }
     private void Update()
     {

@@ -9,7 +9,11 @@ public class CameraFollow : ThaiBehaviour
 
     protected override void LoadComponents()
     {
-        target = GameObject.Find("Player").GetComponent<Transform>();
+        target = FindPlayer.GetPlayer();
+        if (target == null)
+        {
+            Debug.LogError("Can not find player");
+        }
     }
     protected override void ResetValue()
     {

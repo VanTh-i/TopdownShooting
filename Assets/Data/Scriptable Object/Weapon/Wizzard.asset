@@ -16,4 +16,4 @@ MonoBehaviour:
   speed: 15
   hitDelay: 0.5
   pierce: 1
-  range: 0
+  range: 20

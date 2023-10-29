@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4740227156698880560}
   - component: {fileID: 1745691075177638841}
   - component: {fileID: 1594432127685855812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ruin 8
   m_TagString: Prop
   m_Icon: {fileID: 0}

@@ -24,6 +24,7 @@ public class PlayerCollector : ThaiBehaviour
     {
         if (other.gameObject.TryGetComponent(out ICollectible collectible))
         {
+            //keo vat the lai player
             Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
             Vector2 forceDirect = (transform.position - other.transform.position).normalized;
             rb.AddForce(forceDirect * pullForce);

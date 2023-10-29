@@ -23,11 +23,11 @@ public class WarriorAttack : WeaponController
         }
         base.Attack();
         animator.SetTrigger("Attack");
-        SpawnExplosion();
+        SpawnSlashFX();
 
     }
 
-    public void DealingDamage()
+    public void DealingDamage() // call trong animation
     {
         Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(attackPoint.position, currRange, enemyLayer);
         foreach (Collider2D enemy in hitEnemys)
@@ -36,20 +36,25 @@ public class WarriorAttack : WeaponController
 
             if (distance <= currRange)
             {
-                Debug.Log("Hit Enemy");
                 DamageReceiver damageReceiver = enemy.GetComponent<DamageReceiver>();
                 if (damageReceiver != null)
                 {
                     damageReceiver.DeductHp(currDamage);
                 }
+                BreakableProps breakableProps = enemy.GetComponent<BreakableProps>();
+                if (breakableProps != null)
+                {
+                    breakableProps.TakeDamage(1);
+                }
             }
         }
     }
 
-    protected virtual void SpawnExplosion()
+    protected virtual void SpawnSlashFX()
     {
         Transform explosion = FxSpawn.Instance.Spawn(transform.position, transform.rotation, 2);
         explosion.gameObject.SetActive(true);
+        explosion.transform.localScale = new Vector3(currRange * 2, currRange * 2, currRange * 2);
     }
 
     private void OnDrawGizmosSelected()
