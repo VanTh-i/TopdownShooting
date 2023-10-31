@@ -10,8 +10,9 @@ public class EnemySpawnSystem : MonoBehaviour
         public string waveName;
         public List<EnemyType> enemyTypes;
         public int waveQuantity; // so luong ke dich co trong luot
-        public int spawnInterval; // gian cach spawn
         public int spawnCount; // so luong ke dich da spawn
+        public int spawnInterval; // gian cach spawn
+
     }
 
     [System.Serializable]
@@ -30,13 +31,12 @@ public class EnemySpawnSystem : MonoBehaviour
     [Header("Wave Interval")]
     public float waveInterval; // gian cach moi wave
     private float spawnTimer;
-    public int maxEnemiesAllowed;
-    public int enemiesAlive;
-    public bool maxEnemiesReached = false;
+    public int maxEnemiesAllowed; // so quai duoc phep ton tai cung luc
+    [HideInInspector] public int enemiesAlive; // quai co tren san
+    [HideInInspector] public bool maxEnemiesReached = false;
 
     [Header("Spawn Position")]
     public List<Transform> spawnPosition;
-
 
 
     private void Awake()

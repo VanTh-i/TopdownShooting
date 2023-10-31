@@ -962,18 +962,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - waveName: wave 1
+  - waveName: Wave 1
     enemyTypes:
-    - enemyName: bat
-      enemyCount: 12
+    - enemyName: Bat
+      enemyCount: 100
       spawnCount: 0
       enemyPrefab: {fileID: 1413203333908883762, guid: d2da5f53566a2f1419fad4f8702c9554, type: 3}
     waveQuantity: 0
-    spawnInterval: 1
     spawnCount: 0
+    spawnInterval: 1
+  - waveName: Wave 2
+    enemyTypes:
+    - enemyName: Bat 2
+      enemyCount: 100
+      spawnCount: 0
+      enemyPrefab: {fileID: 3078066447260828687, guid: 7b2eaeac384a62e4a903401a7bbcda11, type: 3}
+    waveQuantity: 0
+    spawnCount: 0
+    spawnInterval: 1
   currWaveCount: 0
   waveInterval: 10
-  maxEnemiesAllowed: 3
+  maxEnemiesAllowed: 5
   enemiesAlive: 0
   maxEnemiesReached: 0
   spawnPosition:
