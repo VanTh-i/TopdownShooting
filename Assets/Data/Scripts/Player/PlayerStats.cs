@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -10,10 +11,17 @@ public class PlayerStats : MonoBehaviour
     public int currentMaxHp;
     [HideInInspector] public int currentRecovery;
     [HideInInspector] public float currentSpeed;
+
     [Header("Level/Exp")]
     public int experience = 0;
     public int level = 1;
     public int experienceCap;
+
+    [Header("Inventory")]
+    private InventoryManager inventory;
+    //public int weaponIndex;
+    [HideInInspector] public int weaponIconIndex;
+    [HideInInspector] public int passiveItemIndex;
 
     [System.Serializable]
     public class LevelRange
@@ -26,14 +34,17 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
-        // characterStats = CharacterSelector.GetData();
-        // CharacterSelector.Instance.DestroySingleton();
+        characterStats = CharacterSelector.GetData();
+        CharacterSelector.Instance.DestroySingleton();
+
+        inventory = GetComponentInChildren<InventoryManager>();
 
         currentMaxHp = characterStats.MaxHp;
         currentRecovery = characterStats.Recovery;
         currentSpeed = characterStats.Speed;
 
-        //SpawnCharacter(characterStats.Character);
+        LoadModel(characterStats.Character);
+        LoadSkillUI(characterStats.IconAttack, characterStats.IconSpecial);
     }
 
     private void Start()
@@ -54,6 +65,7 @@ public class PlayerStats : MonoBehaviour
         {
             level++;
             Debug.Log("Level Up to " + level);
+            currentMaxHp += 10;
             experience -= experienceCap;
 
             int experienceCapIncrease = 0;
@@ -77,7 +89,6 @@ public class PlayerStats : MonoBehaviour
             PlayerDead();
         }
     }
-
     private void PlayerDead()
     {
         Debug.LogWarning("You Dead");
@@ -108,9 +119,36 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void SpawnCharacter(GameObject model)
+    public void LoadModel(GameObject model)
     {
+        // if (weaponIndex >= inventory.weaponsSlots.Count - 1)
+        // {
+        //     Debug.LogError("Full slot");
+        //     return;
+        // }
         GameObject spawnModel = Instantiate(model, transform.position, Quaternion.identity);
         spawnModel.transform.SetParent(transform);
+        //inventory.AddWeapon(weaponIndex, spawnModel.GetComponent<WeaponController>());
+        //weaponIndex++;
+    }
+    public void LoadSkillUI(Sprite icon1, Sprite icon2)
+    {
+        inventory.AddUISkill(weaponIconIndex, icon1);
+        weaponIconIndex++;
+        inventory.AddUISkill(weaponIconIndex, icon2);
+        weaponIconIndex++;
+    }
+
+    public void SpawnPassiveItem(GameObject passiveItem)
+    {
+        if (passiveItemIndex >= inventory.passiveItemSlots.Count - 1)
+        {
+            Debug.LogError("Full slot passive");
+            return;
+        }
+        GameObject spawnPassive = Instantiate(passiveItem, transform.position, Quaternion.identity);
+        spawnPassive.transform.SetParent(transform);
+        inventory.AddPassiveItem(passiveItemIndex, spawnPassive.GetComponent<PassiveItem>());
+        passiveItemIndex++;
     }
 }

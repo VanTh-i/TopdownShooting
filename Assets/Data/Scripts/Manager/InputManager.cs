@@ -14,11 +14,11 @@ public class InputManager : MonoBehaviour
     private Vector2 moveDir;
     public Vector2 MoveDir { get => moveDir; }
 
-    // private Vector3 mouseMovePos;
-    // public Vector3 MouseMovePos { get => mouseMovePos; }
+    private bool onLeftClick = false;
+    public bool OnLeftClick { get => onLeftClick; }
 
-    private bool onFiring = false;
-    public bool OnFiring { get => onFiring; }
+    private bool onRightClick = false;
+    public bool OnRightClick { get => onRightClick; }
 
     private void Awake()
     {
@@ -26,13 +26,13 @@ public class InputManager : MonoBehaviour
     }
     private void Update()
     {
-        GetMouseShoot();
+        GetLeftClick();
+        GetRightClick();
     }
     private void FixedUpdate()
     {
         GetMousePos();
         MoveInput();
-        //GetMouseMove();
     }
 
     protected virtual void GetMousePos()
@@ -48,24 +48,27 @@ public class InputManager : MonoBehaviour
         return moveDir = new Vector2(moveX, moveY).normalized;
     }
 
-    // protected virtual void GetMouseMove() //right mouse move
-    // {
-    //     if (Input.GetKey(KeyCode.Mouse1))
-    //     {
-    //         mouseMovePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //         Debug.Log(mouseMovePos);
-    //     }
-    // }
-
-    protected virtual void GetMouseShoot() // shoot
+    protected virtual void GetRightClick() // Right mouse click
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse1))
         {
-            onFiring = true;
+            onRightClick = true;
         }
         else
         {
-            onFiring = false;
+            onRightClick = false;
+        }
+    }
+
+    protected virtual void GetLeftClick() // Left mouse click
+    {
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            onLeftClick = true;
+        }
+        else
+        {
+            onLeftClick = false;
         }
     }
 

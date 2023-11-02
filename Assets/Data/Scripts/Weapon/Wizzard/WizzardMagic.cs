@@ -15,7 +15,7 @@ public class WizzardMagic : WeaponController
     }
     protected override void Attack()
     {
-        if (!InputManager.Instance.OnFiring)
+        if (!InputManager.Instance.OnLeftClick)
         {
             return;
         }

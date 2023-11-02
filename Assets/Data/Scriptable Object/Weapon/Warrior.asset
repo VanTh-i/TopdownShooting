@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4342ad7ef75f0de43860b4af3ccaab79, type: 3}
   m_Name: Warrior
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 10
   speed: 0
-  hitDelay: 0.5
+  hitDelay: 1
   pierce: 0
   range: 2.2
+  iconAttack: {fileID: 21300000, guid: 8d554dbffb784344e9b1a5ad76a21e29, type: 3}
+  iconSpecial: {fileID: 21300000, guid: 442386380ecb95f48a386bda32bc3e2c, type: 3}

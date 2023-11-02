@@ -21,4 +21,10 @@ public class CharacterScriptableObjects : ScriptableObject
     [SerializeField]
     private float speed;
     public float Speed { get => speed; private set => speed = value; }
+
+    [SerializeField] private Sprite iconAttack;
+    public Sprite IconAttack { get => iconAttack; private set => iconAttack = value; }
+
+    [SerializeField] private Sprite iconSpecial;
+    public Sprite IconSpecial { get => iconSpecial; private set => iconSpecial = value; }
 }

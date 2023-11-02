@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8593094cddc53bf46936c51c61a516bf, type: 3}
-  m_Name: Enemy Mele
+  m_Script: {fileID: 11500000, guid: 0302bd75613b6a147bd873ac9931cf47, type: 3}
+  m_Name: Attack
   m_EditorClassIdentifier: 
-  maxHp: 15
-  speed: 3
-  attackRange: 2
+  multipler: 10
+  level: 1
+  nextLevelPrefab: {fileID: 5055059766393057979, guid: 4b23b20d8fdedf74088a4eebf2cd1234, type: 3}
