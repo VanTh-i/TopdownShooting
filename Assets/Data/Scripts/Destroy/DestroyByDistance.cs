@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class DestroyByDistance : Destroy
 {
-    public WeaponController weaponController;
-    protected float maxDistance;
+    public WeaponScriptableObject weaponStats;
+    public float maxDistance;
     //protected float distance = 0f;
     protected Camera mainCam;
 
     protected override void LoadComponents()
     {
         LoadCamera();
-        weaponController = FindObjectOfType<WeaponController>();
-        maxDistance = weaponController.currRange;
+        maxDistance = weaponStats.Range;
     }
 
     protected virtual void LoadCamera()

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WizzardMagic : WeaponController
+public class WizzardSpecial : SpecialController
 {
     protected Animator animator;
-    // public int magicDamage;
-    // public float magicDelay;
+    // public int specialDamage;
+    // public float specialDelay;
 
     protected override void LoadComponents()
     {
@@ -17,21 +17,21 @@ public class WizzardMagic : WeaponController
     protected override void Start()
     {
         base.Start();
-        // magicDamage = currDamage;
-        // magicDelay = hitDelay;
+        // specialDamage = currDamage;
+        // specialDelay = hitDelay;
     }
 
     protected override void Update()
     {
-        CanAttack();
+        CanSpecial();
     }
-    protected override void Attack()
+    protected override void Special()
     {
-        if (!InputManager.Instance.OnLeftClick)
+        if (!InputManager.Instance.OnRightClick)
         {
             return;
         }
-        base.Attack();
-        animator.SetTrigger("Attack");
+        base.Special();
+        animator.SetTrigger("Special");
     }
 }

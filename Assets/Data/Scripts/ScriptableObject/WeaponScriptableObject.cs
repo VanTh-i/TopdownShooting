@@ -14,9 +14,6 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField] private float hitDelay; //delay don danh
     public float HitDelay { get => hitDelay; private set => hitDelay = value; }
 
-    [SerializeField] private float specialDelay;
-    public float SpecialDelay { get => specialDelay; private set => specialDelay = value; }
-
     [SerializeField] private int pierce; // dam xuyen ke thu
     public int Pierce { get => pierce; private set => pierce = value; }
 

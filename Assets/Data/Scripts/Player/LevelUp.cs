@@ -7,20 +7,22 @@ public class LevelUp : MonoBehaviour
 {
     protected PlayerStats playerStats;
     protected WeaponController weaponStats;
+    protected SpecialController specialStats;
+
     private void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
         weaponStats = FindObjectOfType<WeaponController>();
-    }
-
-    public void LevelUpAttack()
-    {
-        weaponStats.currDamage += 1;
+        specialStats = FindObjectOfType<SpecialController>();
     }
     public void LevelUpSpeed()
     {
         playerStats.currentSpeed *= 1 + 5 / 100f;
+    }
 
+    public void LevelUpAttack()
+    {
+        weaponStats.currDamage += 10;
     }
     public void LevelUpAttackSpeed()
     {
@@ -28,6 +30,19 @@ public class LevelUp : MonoBehaviour
         {
             return;
         }
-        weaponStats.hitDelay *= 1 - 10 / 100f; //giam 10 toc do danh
+        weaponStats.hitDelay *= 1 - 10 / 100f;
+    }
+
+    public void LevelUpSpecial()
+    {
+        specialStats.currDamage += 10;
+    }
+    public void LevelUpSpecialSpeed()
+    {
+        if (specialStats.hitDelay <= 2f)
+        {
+            return;
+        }
+        specialStats.hitDelay *= 1 - 10 / 100f;
     }
 }

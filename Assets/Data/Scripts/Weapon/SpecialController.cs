@@ -1,13 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Mono.Cecil.Cil;
 using UnityEngine;
 
-public class WeaponController : ThaiBehaviour
+public class SpecialController : ThaiBehaviour
 {
-    [Header("Weapon Stats")]
-    public WeaponScriptableObject weaponStats;
+    [Header("Special Stats")]
+    public WeaponScriptableObject specialStats;
     public int currDamage;
     public float currHitDelay;
     public float hitDelay;
@@ -18,10 +16,10 @@ public class WeaponController : ThaiBehaviour
     protected override void Awake()
     {
         base.Awake();
-        currDamage = weaponStats.Damage;
-        hitDelay = weaponStats.HitDelay;
-        currPierce = weaponStats.Pierce;
-        currRange = weaponStats.Range;
+        currDamage = specialStats.Damage;
+        hitDelay = specialStats.HitDelay;
+        currPierce = specialStats.Pierce;
+        currRange = specialStats.Range;
     }
     protected virtual void Start()
     {
@@ -29,20 +27,20 @@ public class WeaponController : ThaiBehaviour
     }
     protected virtual void Update()
     {
-        CanAttack();
+        CanSpecial();
     }
 
-    protected virtual void CanAttack()
+    protected virtual void CanSpecial()
     {
         currHitDelay -= Time.deltaTime;
         if (currHitDelay <= 0f)
         {
             currHitDelay = 0f;
-            Attack();
+            Special();
         }
     }
 
-    protected virtual void Attack()
+    protected virtual void Special()
     {
         currHitDelay = hitDelay;
     }

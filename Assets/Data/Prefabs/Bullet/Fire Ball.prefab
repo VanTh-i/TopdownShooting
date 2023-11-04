@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7ce8f51e260424c8d9581c5f93c05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponStats: {fileID: 11400000, guid: 4cceb29f2818e5942848998592618bda, type: 2}
   maxDistance: 30
 --- !u!1 &6844318407648460287
 GameObject:
