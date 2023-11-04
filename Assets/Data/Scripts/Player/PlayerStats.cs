@@ -49,7 +49,7 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         experienceCap = levelRanges[0].experienceCapIncrease; //khoi tao experienceCap tai lv dau tien
-        InvokeRepeating("Recovery", 0f, 2f); // tu hoi phuc moi 2s
+        InvokeRepeating("Recovery", 0f, 5f); // tu hoi phuc moi 2s
 
     }
 
@@ -120,15 +120,8 @@ public class PlayerStats : MonoBehaviour
 
     public void LoadModel(GameObject model)
     {
-        // if (weaponIndex >= inventory.weaponsSlots.Count - 1)
-        // {
-        //     Debug.LogError("Full slot");
-        //     return;
-        // }
         GameObject spawnModel = Instantiate(model, transform.position, Quaternion.identity);
         spawnModel.transform.SetParent(transform);
-        //inventory.AddWeapon(weaponIndex, spawnModel.GetComponent<WeaponController>());
-        //weaponIndex++;
     }
     public void LoadSkillUI(Sprite icon1, Sprite icon2)
     {

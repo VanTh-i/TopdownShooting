@@ -36,6 +36,10 @@ public class SpecialController : ThaiBehaviour
         if (currHitDelay <= 0f)
         {
             currHitDelay = 0f;
+            if (GameManager.Instance.currentState == GameManager.GameState.Paused)
+            {
+                return;
+            }
             Special();
         }
     }
