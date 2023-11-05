@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edadd7e4abe34d74298e5d2d07e3e219, type: 3}
   m_Name: Wizzard
   m_EditorClassIdentifier: 
+  name: Black Wizzard
+  characterIcon: {fileID: 21300000, guid: a353d2c8d5fdc6c4b9b11a2bc7073fdc, type: 3}
   character: {fileID: 6679592819448805699, guid: 7414843a82cfb5b4a8e95fe59c38265a, type: 3}
   maxHp: 100
   recovery: 1

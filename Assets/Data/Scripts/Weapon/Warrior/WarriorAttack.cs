@@ -39,7 +39,7 @@ public class WarriorAttack : WeaponController
                 DamageReceiver damageReceiver = enemy.GetComponent<DamageReceiver>();
                 if (damageReceiver != null)
                 {
-                    damageReceiver.DeductHp(currDamage);
+                    damageReceiver.DeductHp(CurrDamage);
                 }
                 BreakableProps breakableProps = enemy.GetComponent<BreakableProps>();
                 if (breakableProps != null)

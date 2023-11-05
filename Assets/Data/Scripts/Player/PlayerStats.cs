@@ -7,9 +7,63 @@ public class PlayerStats : MonoBehaviour
 {
     [Header("Stats")]
     public CharacterScriptableObjects characterStats;
-    public int currentMaxHp;
-    [HideInInspector] public int currentRecovery;
-    [HideInInspector] public float currentSpeed;
+    private int currentMaxHP;
+    [SerializeField] private int currentHp;
+    private int currentRecovery;
+    private float currentSpeed;
+
+    #region Stat Property
+    public int CurrentMaxHP
+    {
+        get => currentMaxHP;
+        set
+        {
+            currentMaxHP = value;
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.maxHPDisplay.text = "" + currentMaxHP;
+            }
+        }
+    }
+
+    public int CurrentHp
+    {
+        get => currentHp;
+        set
+        {
+            currentHp = value;
+            // if (GameManager.Instance != null)
+            // {
+            //     GameManager.Instance.maxHPDisplay.text = "" + currentHp;
+            // }
+        }
+    }
+    public int CurrentRecovery
+    {
+        get => currentRecovery;
+        set
+        {
+            currentRecovery = value;
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.recoveryDisplay.text = "" + currentRecovery;
+            }
+        }
+    }
+    public float CurrentSpeed
+    {
+        get => currentSpeed;
+        set
+        {
+            currentSpeed = value;
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed;
+            }
+        }
+    }
+
+    #endregion
 
     [Header("Level/Exp")]
     public int experience = 0;
@@ -31,6 +85,8 @@ public class PlayerStats : MonoBehaviour
     }
     public List<LevelRange> levelRanges;
 
+
+
     private void Awake()
     {
         characterStats = CharacterSelector.GetData();
@@ -38,9 +94,10 @@ public class PlayerStats : MonoBehaviour
 
         inventory = GetComponentInChildren<InventoryManager>();
 
-        currentMaxHp = characterStats.MaxHp;
-        currentRecovery = characterStats.Recovery;
-        currentSpeed = characterStats.Speed;
+        CurrentMaxHP = characterStats.MaxHp;
+        CurrentHp = characterStats.MaxHp;
+        CurrentRecovery = characterStats.Recovery;
+        CurrentSpeed = characterStats.Speed;
 
         LoadModel(characterStats.Character);
         LoadSkillUI(characterStats.IconAttack, characterStats.IconSpecial);
@@ -49,6 +106,14 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         experienceCap = levelRanges[0].experienceCapIncrease; //khoi tao experienceCap tai lv dau tien
+
+        //GameManager.Instance.maxHPDisplay.text = "" + currentHp;
+        //show chi so
+        GameManager.Instance.maxHPDisplay.text = "" + currentMaxHP;
+        GameManager.Instance.recoveryDisplay.text = "" + currentRecovery;
+        GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed;
+        GameManager.Instance.ResultChosenCharacters(characterStats); //show player da choi khi chet
+
         InvokeRepeating("Recovery", 0f, 5f); // tu hoi phuc moi 2s
 
     }
@@ -63,8 +128,8 @@ public class PlayerStats : MonoBehaviour
         if (experience >= experienceCap)
         {
             level++;
+            CurrentMaxHP += 10;
             Debug.Log("Level Up to " + level);
-            currentMaxHp += 10;
             experience -= experienceCap;
 
             int experienceCapIncrease = 0;
@@ -77,43 +142,49 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+
+            GameManager.Instance.StartLevelUp();
         }
     }
 
     public void TakeDamage(int dmg)
     {
-        currentMaxHp -= dmg;
-        if (currentMaxHp <= 0)
+        CurrentHp -= dmg;
+        if (CurrentHp <= 0)
         {
+            CurrentHp = 0;
             PlayerDead();
         }
     }
     private void PlayerDead()
     {
-        Debug.LogWarning("You Dead");
+        if (!GameManager.Instance.isGameOver)
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 
     public void RestoreHealth(int amount)
     {
-        if (currentMaxHp < characterStats.MaxHp)
+        if (CurrentHp < CurrentMaxHP)
         {
-            currentMaxHp += amount;
+            CurrentHp += amount;
 
-            if (currentMaxHp > characterStats.MaxHp)
+            if (CurrentHp > CurrentMaxHP)
             {
-                currentMaxHp = characterStats.MaxHp;
+                CurrentHp = CurrentMaxHP;
             }
         }
     }
     private void Recovery()
     {
-        if (currentMaxHp < characterStats.MaxHp)
+        if (CurrentHp < CurrentMaxHP)
         {
-            currentMaxHp += currentRecovery;
+            CurrentHp += CurrentRecovery;
 
-            if (currentMaxHp > characterStats.MaxHp)
+            if (CurrentHp > CurrentMaxHP)
             {
-                currentMaxHp = characterStats.MaxHp;
+                CurrentHp = CurrentMaxHP;
             }
         }
     }

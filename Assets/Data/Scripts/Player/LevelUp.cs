@@ -17,12 +17,12 @@ public class LevelUp : MonoBehaviour
     }
     public void LevelUpSpeed()
     {
-        playerStats.currentSpeed *= 1 + 5 / 100f;
+        playerStats.CurrentSpeed *= 1 + 5 / 100f;
     }
 
     public void LevelUpAttack()
     {
-        weaponStats.currDamage += 10;
+        weaponStats.CurrDamage += 10;
     }
     public void LevelUpAttackSpeed()
     {
@@ -35,7 +35,7 @@ public class LevelUp : MonoBehaviour
 
     public void LevelUpSpecial()
     {
-        specialStats.currDamage += 10;
+        specialStats.CurrDamage += 10;
     }
     public void LevelUpSpecialSpeed()
     {

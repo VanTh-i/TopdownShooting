@@ -8,17 +8,28 @@ public class WeaponController : ThaiBehaviour
 {
     [Header("Weapon Stats")]
     public WeaponScriptableObject weaponStats;
-    public int currDamage;
+    private int currDamage;
     public float currHitDelay;
     public float hitDelay;
     [HideInInspector] public float currPierce;
     [HideInInspector] public float currRange;
 
+    public int CurrDamage
+    {
+        get => currDamage;
+        set
+        {
+            currDamage = value; if (GameManager.Instance != null)
+            {
+                GameManager.Instance.attackDamageDisplay.text = "" + currDamage;
+            }
+        }
+    }
 
     protected override void Awake()
     {
         base.Awake();
-        currDamage = weaponStats.Damage;
+        CurrDamage = weaponStats.Damage;
         hitDelay = weaponStats.HitDelay;
         currPierce = weaponStats.Pierce;
         currRange = weaponStats.Range;
@@ -26,6 +37,9 @@ public class WeaponController : ThaiBehaviour
     protected virtual void Start()
     {
         currHitDelay = 0f;
+
+        GameManager.Instance.attackDamageDisplay.text = "" + currDamage;
+
     }
     protected virtual void Update()
     {
@@ -38,7 +52,8 @@ public class WeaponController : ThaiBehaviour
         if (currHitDelay <= 0f)
         {
             currHitDelay = 0f;
-            if (GameManager.Instance.currentState == GameManager.GameState.Paused)
+            if (GameManager.Instance.currentState == GameManager.GameState.Paused ||
+             GameManager.Instance.currentState == GameManager.GameState.GameOver)
             {
                 return;
             }

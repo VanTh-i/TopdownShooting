@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edadd7e4abe34d74298e5d2d07e3e219, type: 3}
   m_Name: Warrior
   m_EditorClassIdentifier: 
+  name: Warrior
+  characterIcon: {fileID: 21300000, guid: bda6f6eb28c7a4449b9432a7629f0b1f, type: 3}
   character: {fileID: 400493031842573871, guid: 704d212835132b24abf86d6a2a782ae7, type: 3}
   maxHp: 150
   recovery: 1

@@ -27,7 +27,7 @@ public class BigMagicBehaviour : DamageSender
     }
     public override void Send(DamageReceiver damageReceiver)
     {
-        damageReceiver.DeductHp(wizzardSpecial.currDamage);
+        damageReceiver.DeductHp(wizzardSpecial.CurrDamage);
         DestroyObject();
     }
     protected override void DestroyObject()

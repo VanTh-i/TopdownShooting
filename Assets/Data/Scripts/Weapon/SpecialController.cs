@@ -12,11 +12,22 @@ public class SpecialController : ThaiBehaviour
     [HideInInspector] public float currPierce;
     [HideInInspector] public float currRange;
 
+    public int CurrDamage
+    {
+        get => currDamage;
+        set
+        {
+            currDamage = value; if (GameManager.Instance != null)
+            {
+                GameManager.Instance.specialDamageDisplay.text = "" + currDamage;
+            }
+        }
+    }
 
     protected override void Awake()
     {
         base.Awake();
-        currDamage = specialStats.Damage;
+        CurrDamage = specialStats.Damage;
         hitDelay = specialStats.HitDelay;
         currPierce = specialStats.Pierce;
         currRange = specialStats.Range;
@@ -24,6 +35,8 @@ public class SpecialController : ThaiBehaviour
     protected virtual void Start()
     {
         currHitDelay = 0f;
+        GameManager.Instance.specialDamageDisplay.text = "" + currDamage;
+
     }
     protected virtual void Update()
     {
@@ -36,7 +49,8 @@ public class SpecialController : ThaiBehaviour
         if (currHitDelay <= 0f)
         {
             currHitDelay = 0f;
-            if (GameManager.Instance.currentState == GameManager.GameState.Paused)
+            if (GameManager.Instance.currentState == GameManager.GameState.Paused ||
+             GameManager.Instance.currentState == GameManager.GameState.GameOver)
             {
                 return;
             }

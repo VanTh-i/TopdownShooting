@@ -27,7 +27,7 @@ public class MagicBehaviour : DamageSender
     }
     public override void Send(DamageReceiver damageReceiver)
     {
-        damageReceiver.DeductHp(wizzardMagic.currDamage);
+        damageReceiver.DeductHp(wizzardMagic.CurrDamage);
         DestroyObject();
     }
     protected override void DestroyObject()

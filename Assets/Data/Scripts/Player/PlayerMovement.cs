@@ -74,6 +74,6 @@ public class PlayerMovement : ThaiBehaviour
         shootPoint.localScale = aimDir;
 
         //moving
-        rb.velocity = new Vector2(moveDir.x * playerStats.currentSpeed, moveDir.y * playerStats.currentSpeed);
+        rb.velocity = new Vector2(moveDir.x * playerStats.CurrentSpeed, moveDir.y * playerStats.CurrentSpeed);
     }
 }
