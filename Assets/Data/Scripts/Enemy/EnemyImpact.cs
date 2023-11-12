@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class EnemyImpact : ThaiBehaviour
 {
+    protected WeaponController weaponStats;
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        weaponStats = FindObjectOfType<WeaponController>();
+    }
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-        // if (other.gameObject.CompareTag("Enemy"))
-        // {
-        //     ImpactWithBullet();
-
-        //     if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
-        //     {
-        //         enemyStats.TakeDamage(1);
-        //     }
-        // }
-    }
-    protected virtual void ImpactWithBullet()
-    {
-        BulletSpawn.Instance.DeSpawn(transform.parent);
-        SpawnExplosion();
+        //
     }
     protected virtual void SpawnExplosion()
     {

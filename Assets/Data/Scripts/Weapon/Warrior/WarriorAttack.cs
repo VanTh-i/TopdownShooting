@@ -36,10 +36,10 @@ public class WarriorAttack : WeaponController
 
             if (distance <= currRange)
             {
-                DamageReceiver damageReceiver = enemy.GetComponent<DamageReceiver>();
-                if (damageReceiver != null)
+                EnemyStats enemyStats = enemy.GetComponent<EnemyStats>();
+                if (enemyStats != null)
                 {
-                    damageReceiver.DeductHp(CurrDamage);
+                    enemyStats.TakeDamage(CurrDamage);
                 }
                 BreakableProps breakableProps = enemy.GetComponent<BreakableProps>();
                 if (breakableProps != null)

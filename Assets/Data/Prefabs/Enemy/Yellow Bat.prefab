@@ -177,11 +177,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3078066447270047684}
-  - component: {fileID: 3078066447270047683}
   - component: {fileID: 2723467976075021434}
+  - component: {fileID: 4670640992320178233}
   m_Layer: 7
   m_Name: HP (receiver dmg)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,19 +201,6 @@ Transform:
   m_Father: {fileID: 3078066447260828684}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3078066447270047683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3078066447270047685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab407608851ed6b4fa7b26f8f01c0ae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 10
 --- !u!58 &2723467976075021434
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -230,6 +217,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &4670640992320178233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3078066447270047685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cbcdd39ce646a4e839179a0bf244e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: cf7694603c564424bbc642ce8e685dd4, type: 2}
+  currentDamage: 0
+  currentMaxHp: 0
+  currentSpeed: 0
+  currentAttackRange: 0
 --- !u!1 &3078066447290340235
 GameObject:
   m_ObjectHideFlags: 0

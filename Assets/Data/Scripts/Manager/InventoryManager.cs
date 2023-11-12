@@ -2,20 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class InventoryManager : MonoBehaviour
 {
-    //public List<WeaponController> weaponsSlots = new List<WeaponController>(2);
-    public List<Image> skillUISlots = new List<Image>(2);
-
-    public List<PassiveItem> passiveItemSlots = new List<PassiveItem>(6);
+    public List<Image> skillUISlots = new List<Image>();
+    public List<PassiveItem> passiveItemSlots = new List<PassiveItem>();
     public int[] passiveItemLevels = new int[6];
 
-    // public void AddWeapon(int slotIndex, WeaponController weapon)
-    // {
-    //     weaponsSlots[slotIndex] = weapon;
-    // }
+    [System.Serializable]
+    public class CharacterUpgrade
+    {
+        public GameObject initialChar;
+        public WeaponScriptableObject weaponData;
+
+    }
+    [System.Serializable]
+    public class PassiveItemUpgrade
+    {
+        public GameObject initialPassiveItem;
+        public PassiveItemScriptableObject passiveItemData;
+
+    }
+    [System.Serializable]
+    public class UpgradeUI
+    {
+        public TextMeshProUGUI upgradeNameDisplay;
+        public TextMeshProUGUI upgradeDescriptionDisplay;
+        public Image upgradeIcon;
+        public Button upgradeButton;
+
+    }
+
+    public List<CharacterUpgrade> characterUpgradeOptions = new List<CharacterUpgrade>();
+    public List<PassiveItemUpgrade> PassiveItemUpgradeOptions = new List<PassiveItemUpgrade>();
+    public List<UpgradeUI> UIUpgradeOptions = new List<UpgradeUI>();
+
+
 
     public void AddUISkill(int slotIndex, Sprite icon)
     {
@@ -28,26 +52,39 @@ public class InventoryManager : MonoBehaviour
         passiveItemLevels[slotIndex] = passiveItem.passiveItemData.Level;
     }
 
-    public void LevelUpWeapon(int slotIndex)
+    public void LevelUpAuraPassiveItem(PlayerStats playerStats)
     {
-
-    }
-
-    public void LevelUpPassiveItem(int slotIndex)
-    {
-        if (passiveItemSlots.Count > slotIndex)
+        if (passiveItemSlots.Count > playerStats.auraItemIndex)
         {
-            PassiveItem passiveItem = passiveItemSlots[slotIndex];
+            PassiveItem passiveItem = passiveItemSlots[playerStats.auraItemIndex];
             if (!passiveItem.passiveItemData.NextLevelPrefab)
             {
                 Debug.LogWarning("level up is max");
                 return;
             }
-            GameObject upgradePassive = Instantiate(passiveItem.passiveItemData.NextLevelPrefab, transform.position, Quaternion.identity);
+            GameObject upgradePassive = Instantiate(passiveItem.passiveItemData.NextLevelPrefab, transform.position + passiveItem.passiveItemData.NextLevelPrefab.transform.position, Quaternion.identity);
             upgradePassive.transform.SetParent(transform.parent);
-            AddPassiveItem(slotIndex, upgradePassive.GetComponent<PassiveItem>());
+            AddPassiveItem(playerStats.auraItemIndex, upgradePassive.GetComponent<PassiveItem>());
             Destroy(passiveItem.gameObject);
-            passiveItemLevels[slotIndex] = upgradePassive.GetComponent<PassiveItem>().passiveItemData.Level;
+            passiveItemLevels[playerStats.auraItemIndex] = upgradePassive.GetComponent<PassiveItem>().passiveItemData.Level;
+        }
+
+    }
+    public void LevelUpFamiliarPassiveItem(PlayerStats playerStats)
+    {
+        if (passiveItemSlots.Count > playerStats.familiarItemIndex)
+        {
+            PassiveItem passiveItem = passiveItemSlots[playerStats.familiarItemIndex];
+            if (!passiveItem.passiveItemData.NextLevelPrefab)
+            {
+                Debug.LogWarning("level up is max");
+                return;
+            }
+            GameObject upgradePassive = Instantiate(passiveItem.passiveItemData.NextLevelPrefab, transform.position + passiveItem.passiveItemData.NextLevelPrefab.transform.position, Quaternion.identity);
+            upgradePassive.transform.SetParent(transform.parent);
+            AddPassiveItem(playerStats.familiarItemIndex, upgradePassive.GetComponent<PassiveItem>());
+            Destroy(passiveItem.gameObject);
+            passiveItemLevels[playerStats.familiarItemIndex] = upgradePassive.GetComponent<PassiveItem>().passiveItemData.Level;
         }
 
     }

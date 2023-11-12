@@ -58,7 +58,6 @@ public class EnemySpawnSystem : MonoBehaviour
     {
         if (currWaveCount < waves.Count && waves[currWaveCount].spawnCount == 0 && !isBeginNextWave)
         {
-            Debug.Log("next wave");
             StartCoroutine(BeginNextWave());
         }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicBehaviour : DamageSender
+public class MagicBehaviour : EnemyImpact
 {
     private WizzardMagic wizzardMagic;
     private Vector3 direction = Vector3.right;
@@ -25,12 +25,21 @@ public class MagicBehaviour : DamageSender
     {
         transform.parent.Translate(direction * wizzardMagic.weaponStats.Speed * Time.deltaTime);
     }
-    public override void Send(DamageReceiver damageReceiver)
+
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
-        damageReceiver.DeductHp(wizzardMagic.CurrDamage);
-        DestroyObject();
+        base.OnTriggerEnter2D(other);
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            DestroyObject();
+
+            if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
+            {
+                enemyStats.TakeDamage(wizzardMagic.CurrDamage);
+            }
+        }
     }
-    protected override void DestroyObject()
+    protected virtual void DestroyObject()
     {
         pierce--;
         if (pierce <= 0)
@@ -40,13 +49,9 @@ public class MagicBehaviour : DamageSender
         }
         SpawnExplosion();
     }
+
     private void OnDisable() //tao ra vu no sau khi dan va cham
     {
 
-    }
-    protected virtual void SpawnExplosion()
-    {
-        Transform explosion = FxSpawn.Instance.Spawn(transform.position, transform.rotation, 1);
-        explosion.gameObject.SetActive(true);
     }
 }

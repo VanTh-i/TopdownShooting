@@ -2,16 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PassiveItem : MonoBehaviour
+public class PassiveItem : ThaiBehaviour
 {
-    protected PlayerStats playerStats;
-    protected WeaponController weaponStats;
     public PassiveItemScriptableObject passiveItemData;
 
-    void Start()
+    protected virtual void Start()
     {
-        playerStats = FindObjectOfType<PlayerStats>();
-        weaponStats = FindObjectOfType<WeaponController>();
         ApplyModifier();
     }
     protected virtual void ApplyModifier()

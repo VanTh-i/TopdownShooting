@@ -29,7 +29,12 @@ public class PlayerCollector : ThaiBehaviour
             Vector2 forceDirect = (transform.position - other.transform.position).normalized;
             rb.AddForce(forceDirect * pullForce);
 
-            collectible.Collect();
+            StartCoroutine(CollectItem(collectible));
         }
+    }
+    private IEnumerator CollectItem(ICollectible collectible)
+    {
+        yield return new WaitForSeconds(0.2f);
+        collectible.Collect();
     }
 }

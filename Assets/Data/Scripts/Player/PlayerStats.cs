@@ -72,9 +72,11 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Inventory")]
     private InventoryManager inventory;
-    //public int weaponIndex;
-    [HideInInspector] public int weaponIconIndex;
-    [HideInInspector] public int passiveItemIndex;
+    protected int skillIconIndex;
+    protected int passiveItemIndex;
+    [HideInInspector] public int auraItemIndex;
+    [HideInInspector] public int familiarItemIndex;
+    public GameObject[] passiveItemPrefabs;
 
     [System.Serializable]
     public class LevelRange
@@ -99,6 +101,7 @@ public class PlayerStats : MonoBehaviour
         CurrentRecovery = characterStats.Recovery;
         CurrentSpeed = characterStats.Speed;
 
+        //player Load
         LoadModel(characterStats.Character);
         LoadSkillUI(characterStats.IconAttack, characterStats.IconSpecial);
     }
@@ -196,22 +199,32 @@ public class PlayerStats : MonoBehaviour
     }
     public void LoadSkillUI(Sprite icon1, Sprite icon2)
     {
-        inventory.AddUISkill(weaponIconIndex, icon1);
-        weaponIconIndex++;
-        inventory.AddUISkill(weaponIconIndex, icon2);
-        weaponIconIndex++;
+        inventory.AddUISkill(skillIconIndex, icon1);
+        skillIconIndex++;
+        inventory.AddUISkill(skillIconIndex, icon2);
+        skillIconIndex++;
     }
 
-    public void SpawnPassiveItem(GameObject passiveItem)
+    public void SpawnPassiveItem(int prefabIndex)
     {
         if (passiveItemIndex >= inventory.passiveItemSlots.Count - 1)
         {
             Debug.LogError("Full slot passive");
             return;
         }
-        GameObject spawnPassive = Instantiate(passiveItem, transform.position, Quaternion.identity);
+        GameObject spawnPassive = Instantiate(passiveItemPrefabs[prefabIndex], transform.position + passiveItemPrefabs[prefabIndex].transform.position, Quaternion.identity);
         spawnPassive.transform.SetParent(transform);
         inventory.AddPassiveItem(passiveItemIndex, spawnPassive.GetComponent<PassiveItem>());
-        passiveItemIndex++;
+
+        if (prefabIndex == 0)
+        {
+            auraItemIndex = passiveItemIndex;
+            passiveItemIndex++;
+        }
+        else if (prefabIndex == 1)
+        {
+            familiarItemIndex = passiveItemIndex;
+            passiveItemIndex++;
+        }
     }
 }

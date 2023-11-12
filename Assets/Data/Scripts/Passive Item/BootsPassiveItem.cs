@@ -7,6 +7,6 @@ public class BootsPassiveItem : PassiveItem
     protected override void ApplyModifier()
     {
         base.ApplyModifier();
-        playerStats.CurrentSpeed *= 1 + passiveItemData.Multipler / 100f;
+        //playerStats.CurrentSpeed *= 1 + passiveItemData.Multipler / 100f;
     }
 }
