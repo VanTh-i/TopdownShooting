@@ -11,36 +11,6 @@ public class InventoryManager : MonoBehaviour
     public List<PassiveItem> passiveItemSlots = new List<PassiveItem>();
     public int[] passiveItemLevels = new int[6];
 
-    [System.Serializable]
-    public class CharacterUpgrade
-    {
-        public GameObject initialChar;
-        public WeaponScriptableObject weaponData;
-
-    }
-    [System.Serializable]
-    public class PassiveItemUpgrade
-    {
-        public GameObject initialPassiveItem;
-        public PassiveItemScriptableObject passiveItemData;
-
-    }
-    [System.Serializable]
-    public class UpgradeUI
-    {
-        public TextMeshProUGUI upgradeNameDisplay;
-        public TextMeshProUGUI upgradeDescriptionDisplay;
-        public Image upgradeIcon;
-        public Button upgradeButton;
-
-    }
-
-    public List<CharacterUpgrade> characterUpgradeOptions = new List<CharacterUpgrade>();
-    public List<PassiveItemUpgrade> PassiveItemUpgradeOptions = new List<PassiveItemUpgrade>();
-    public List<UpgradeUI> UIUpgradeOptions = new List<UpgradeUI>();
-
-
-
     public void AddUISkill(int slotIndex, Sprite icon)
     {
         skillUISlots[slotIndex].sprite = icon;
@@ -86,6 +56,12 @@ public class InventoryManager : MonoBehaviour
             Destroy(passiveItem.gameObject);
             passiveItemLevels[playerStats.familiarItemIndex] = upgradePassive.GetComponent<PassiveItem>().passiveItemData.Level;
         }
+
+    }
+
+    private void ApplyUpgradeOptions()
+    {
+
 
     }
 

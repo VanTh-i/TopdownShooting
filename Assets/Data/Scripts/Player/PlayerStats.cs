@@ -58,7 +58,7 @@ public class PlayerStats : MonoBehaviour
             currentSpeed = value;
             if (GameManager.Instance != null)
             {
-                GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed;
+                GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed.ToString("F2");
             }
         }
     }
@@ -114,7 +114,7 @@ public class PlayerStats : MonoBehaviour
         //show chi so
         GameManager.Instance.maxHPDisplay.text = "" + currentMaxHP;
         GameManager.Instance.recoveryDisplay.text = "" + currentRecovery;
-        GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed;
+        GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed.ToString("F2");
         GameManager.Instance.ResultChosenCharacters(characterStats); //show player da choi khi chet
 
         InvokeRepeating("Recovery", 0f, 5f); // tu hoi phuc moi 2s

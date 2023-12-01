@@ -31,15 +31,15 @@ public class GameManager : MonoBehaviour
     public GameObject levelUpScreen;
 
 
-
+    [Header("Stats UI")]
     public TextMeshProUGUI maxHPDisplay;
     public TextMeshProUGUI recoveryDisplay;
     public TextMeshProUGUI moveSpeedDisplay;
     public TextMeshProUGUI attackDamageDisplay;
     public TextMeshProUGUI specialDamageDisplay;
+
+    [Header("Result UI")]
     public TextMeshProUGUI timeSurvivalDisplay;
-
-
     public Image chosenCharacters;
     public TextMeshProUGUI charactersName;
 
@@ -189,10 +189,10 @@ public class GameManager : MonoBehaviour
         stopwatchTime += Time.deltaTime;
         UpdateStopwatchTimeDisplay();
 
-        if (stopwatchTime >= timeLimit)
-        {
-            GameOver();
-        }
+        // if (stopwatchTime >= timeLimit)
+        // {
+        //     GameOver();
+        // }
     }
     private void UpdateStopwatchTimeDisplay()
     {

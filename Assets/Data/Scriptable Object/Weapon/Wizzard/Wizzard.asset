@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   speed: 15
-  hitDelay: 2
+  hitDelay: 1
   pierce: 1
   range: 20
-  iconAttack: {fileID: 21300000, guid: b8ca8eb9e28cfec4488f6c8c98aecca4, type: 3}
-  iconSpecial: {fileID: 21300000, guid: b4a2151bdfd482046863db980afb33bc, type: 3}
