@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 767564300347000629}
   - component: {fileID: 2530140512257293018}
   - component: {fileID: -9039765543376600541}
-  - component: {fileID: 7068539946468549626}
+  - component: {fileID: 5194964988861102619}
   - component: {fileID: 4485190624399006966}
   m_Layer: 7
   m_Name: Bat
@@ -198,7 +198,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7068539946468549626
+--- !u!114 &5194964988861102619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,10 +230,10 @@ MonoBehaviour:
   drops:
   - name: Gold Gem
     itemPrefab: {fileID: 2803380794448510200, guid: 6c7a78a479244a64290427d1b3e739e8, type: 3}
-    dropRate: 10
+    dropRate: 50
   - name: Silver Gem
     itemPrefab: {fileID: 2983447726183794814, guid: 6a89be54f4aeb4d4289dee1919638f0f, type: 3}
-    dropRate: 50
+    dropRate: 90
 --- !u!1 &4812203744062619174
 GameObject:
   m_ObjectHideFlags: 0

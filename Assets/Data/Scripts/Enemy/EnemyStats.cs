@@ -10,6 +10,7 @@ public class EnemyStats : ThaiBehaviour
     [HideInInspector] public int currentMaxHp;
     [HideInInspector] public float currentSpeed;
     [HideInInspector] public int currentAttackRange;
+
     protected override void Awake()
     {
         base.Awake();
@@ -39,6 +40,7 @@ public class EnemyStats : ThaiBehaviour
         {
             Kill();
         }
+
     }
     protected virtual bool CheckEnemyDead()
     {

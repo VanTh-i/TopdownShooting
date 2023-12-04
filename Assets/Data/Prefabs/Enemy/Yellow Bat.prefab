@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3078066447260828685}
   - component: {fileID: 3078066447260828686}
   - component: {fileID: -3107117411432914323}
-  - component: {fileID: 7295315666614432269}
+  - component: {fileID: 6040972404405046846}
   - component: {fileID: 3404374480958402346}
   m_Layer: 7
   m_Name: Yellow Bat
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7295315666614432269
+--- !u!114 &6040972404405046846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,10 +164,10 @@ MonoBehaviour:
   drops:
   - name: Gold Gem
     itemPrefab: {fileID: 2803380794448510200, guid: 6c7a78a479244a64290427d1b3e739e8, type: 3}
-    dropRate: 10
+    dropRate: 50
   - name: Silver Gem
     itemPrefab: {fileID: 2983447726183794814, guid: 6a89be54f4aeb4d4289dee1919638f0f, type: 3}
-    dropRate: 50
+    dropRate: 90
 --- !u!1 &3078066447270047685
 GameObject:
   m_ObjectHideFlags: 0

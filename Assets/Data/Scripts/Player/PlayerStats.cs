@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -78,6 +80,11 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector] public int familiarItemIndex;
     public GameObject[] passiveItemPrefabs;
 
+    [Header("Health Bar and Experience Bar")]
+    public Image healthBar;
+    public Image expBar;
+    public TextMeshProUGUI levelText;
+
     [System.Serializable]
     public class LevelRange
     {
@@ -119,12 +126,17 @@ public class PlayerStats : MonoBehaviour
 
         InvokeRepeating("Recovery", 0f, 5f); // tu hoi phuc moi 2s
 
+        UpdateHealthBar();
+        UpdateExpBar();
+        UpdateLevelText();
+
     }
 
     public void IncreaseExperience(int amount)
     {
         experience += amount;
         LevelUpChecker();
+        UpdateExpBar();
     }
     private void LevelUpChecker()
     {
@@ -146,6 +158,8 @@ public class PlayerStats : MonoBehaviour
             }
             experienceCap += experienceCapIncrease;
 
+            UpdateLevelText();
+
             GameManager.Instance.StartLevelUp();
         }
     }
@@ -158,6 +172,8 @@ public class PlayerStats : MonoBehaviour
             CurrentHp = 0;
             PlayerDead();
         }
+
+        UpdateHealthBar();
     }
     private void PlayerDead()
     {
@@ -178,6 +194,8 @@ public class PlayerStats : MonoBehaviour
                 CurrentHp = CurrentMaxHP;
             }
         }
+
+        UpdateHealthBar();
     }
     private void Recovery()
     {
@@ -190,6 +208,21 @@ public class PlayerStats : MonoBehaviour
                 CurrentHp = CurrentMaxHP;
             }
         }
+
+        UpdateHealthBar();
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar.fillAmount = (float)CurrentHp / characterStats.MaxHp;
+    }
+    private void UpdateExpBar()
+    {
+        expBar.fillAmount = (float)experience / experienceCap;
+    }
+    private void UpdateLevelText()
+    {
+        levelText.text = "LV: " + level.ToString();
     }
 
     public void LoadModel(GameObject model)
