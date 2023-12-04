@@ -23,7 +23,7 @@ public class BigMagicBehaviour : EnemyImpact
     }
     protected virtual void MovingForward()
     {
-        transform.parent.Translate(direction * wizzardSpecial.specialStats.Speed * Time.deltaTime);
+        transform.parent.Translate(direction * 10 * Time.deltaTime);
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)

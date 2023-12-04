@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bat : EnemyMovement
+public class BatMovement : EnemyMovement
 {
     private float collisionCooldown = 1f;
     private float lastCollisionTime = 0f;

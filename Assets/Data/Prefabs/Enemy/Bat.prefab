@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 767564300347000629}
   - component: {fileID: 2530140512257293018}
   - component: {fileID: -9039765543376600541}
-  - component: {fileID: 5194964988861102619}
+  - component: {fileID: 6339260464651397963}
   - component: {fileID: 4485190624399006966}
   m_Layer: 7
   m_Name: Bat
@@ -198,7 +198,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5194964988861102619
+--- !u!114 &6339260464651397963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1413203333908883762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676ee6f5ac0c2fd4697b058c6f7ba6d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 27cbcdd39ce646a4e839179a0bf244e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: cf7694603c564424bbc642ce8e685dd4, type: 2}

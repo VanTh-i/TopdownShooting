@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatHp : EnemyStats
+public class BatStats : EnemyStats
 {
     private EnemySpawnSystem enemySpawn;
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 814611493089322155}
   m_Layer: 0
-  m_Name: Familiar Projectile
+  m_Name: MagicStaff Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 6441669135508842179}
   - component: {fileID: 6758201425934246514}
   - component: {fileID: 7385098720069555602}
-  - component: {fileID: 5888974348375159671}
+  - component: {fileID: 6120640342319260482}
   m_Layer: 0
   m_Name: Damage Impact
   m_TagString: Untagged
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc23de7ce3100f44585aaaa1f164fd63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5888974348375159671
+--- !u!114 &6120640342319260482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,10 +211,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6441669135508842181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7cfc830580ab14fb3343c18b0b3632, type: 3}
+  m_Script: {fileID: 11500000, guid: a5f76499b5163914197b0e01e68fff02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveItemData: {fileID: 11400000, guid: f5ba0251f8347a3438653526bb892c87, type: 2}
 --- !u!1 &6441669135952016845
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,5 +258,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7ce8f51e260424c8d9581c5f93c05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponStats: {fileID: 11400000, guid: 4cceb29f2818e5942848998592618bda, type: 2}
-  maxDistance: 30

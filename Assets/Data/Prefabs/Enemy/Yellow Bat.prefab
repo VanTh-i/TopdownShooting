@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3078066447260828685}
   - component: {fileID: 3078066447260828686}
   - component: {fileID: -3107117411432914323}
-  - component: {fileID: 6040972404405046846}
+  - component: {fileID: 2507693235847630947}
   - component: {fileID: 3404374480958402346}
   m_Layer: 7
   m_Name: Yellow Bat
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6040972404405046846
+--- !u!114 &2507693235847630947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3078066447260828687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676ee6f5ac0c2fd4697b058c6f7ba6d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 27cbcdd39ce646a4e839179a0bf244e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: cf7694603c564424bbc642ce8e685dd4, type: 2}
