@@ -10,6 +10,10 @@ public class EnemyImpact : ThaiBehaviour
         base.LoadComponents();
         weaponStats = FindObjectOfType<WeaponController>();
     }
+    public int GetCurrentDamage()
+    {
+        return weaponStats.CurrDamage += FindObjectOfType<PlayerStats>().CurrentStrength;
+    }
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         //

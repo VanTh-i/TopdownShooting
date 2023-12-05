@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Black Wizzard
   characterIcon: {fileID: 21300000, guid: a353d2c8d5fdc6c4b9b11a2bc7073fdc, type: 3}
   character: {fileID: 6679592819448805699, guid: 7414843a82cfb5b4a8e95fe59c38265a, type: 3}
+  startingWeapon: {fileID: 4255514822295802079, guid: c10ad439dbb8f03479debaa80fc8470a, type: 3}
   maxHp: 100
   recovery: 1
   speed: 3

@@ -8,7 +8,6 @@ public class AuraDmgSender : PassiveItem
 
     protected override void ApplyModifier()
     {
-        base.ApplyModifier();
         auraDamage += (int)passiveItemData.Multipler;
     }
     protected virtual void OnTriggerEnter2D(Collider2D other)

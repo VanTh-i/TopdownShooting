@@ -65,4 +65,5 @@ public class WeaponController : ThaiBehaviour
     {
         currHitDelay = hitDelay;
     }
+
 }

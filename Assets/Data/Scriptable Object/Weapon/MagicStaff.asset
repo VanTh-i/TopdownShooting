@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4342ad7ef75f0de43860b4af3ccaab79, type: 3}
   m_Name: MagicStaff
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 8
   speed: 0
   hitDelay: 1
   pierce: 1

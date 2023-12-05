@@ -31,6 +31,10 @@ public class CharacterScriptableObjects : ScriptableObject
     public int Recovery { get => recovery; private set => recovery = value; }
 
     [SerializeField]
+    private int strength;
+    public int Strength { get => strength; private set => strength = value; }
+
+    [SerializeField]
     private float speed;
     public float Speed { get => speed; private set => speed = value; }
 

@@ -12,7 +12,8 @@ public class PlayerStats : MonoBehaviour
     private int currentMaxHP;
     [SerializeField] private int currentHp;
     private int currentRecovery;
-    private float currentSpeed;
+    [SerializeField] private int currentStrength;
+    [SerializeField] private float currentSpeed;
 
     #region Stat Property
     public int CurrentMaxHP
@@ -52,6 +53,18 @@ public class PlayerStats : MonoBehaviour
             }
         }
     }
+    public int CurrentStrength
+    {
+        get => currentStrength;
+        set
+        {
+            currentStrength = value;
+            // if (GameManager.Instance != null)
+            // {
+            //     GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed.ToString("F2");
+            // }
+        }
+    }
     public float CurrentSpeed
     {
         get => currentSpeed;
@@ -66,6 +79,8 @@ public class PlayerStats : MonoBehaviour
     }
 
     #endregion
+
+    public List<GameObject> spawnerWeaponsList;
 
     [Header("Level/Exp")]
     public int experience = 0;
@@ -106,10 +121,13 @@ public class PlayerStats : MonoBehaviour
         CurrentMaxHP = characterStats.MaxHp;
         CurrentHp = characterStats.MaxHp;
         CurrentRecovery = characterStats.Recovery;
+        CurrentStrength = characterStats.Strength;
         CurrentSpeed = characterStats.Speed;
 
         //player Load
         LoadModel(characterStats.Character);
+        SpawnWeapon(characterStats.StartingWeapon);
+
         LoadSkillUI(characterStats.IconAttack, characterStats.IconSpecial);
     }
 
@@ -230,6 +248,14 @@ public class PlayerStats : MonoBehaviour
         GameObject spawnModel = Instantiate(model, transform.position, Quaternion.identity);
         spawnModel.transform.SetParent(transform);
     }
+
+    public void SpawnWeapon(GameObject weapon)
+    {
+        GameObject spawnWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        spawnWeapon.transform.SetParent(transform);
+        spawnerWeaponsList.Add(spawnWeapon);
+    }
+
     public void LoadSkillUI(Sprite icon1, Sprite icon2)
     {
         inventory.AddUISkill(skillIconIndex, icon1);

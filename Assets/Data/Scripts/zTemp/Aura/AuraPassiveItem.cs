@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AuraPassiveItem : PassiveItem
+public class AuraPassiveItem : MonoBehaviour
 {
     protected float rotationSpeed = 400f;
 

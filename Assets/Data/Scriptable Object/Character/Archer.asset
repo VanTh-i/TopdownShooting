@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Archer
   characterIcon: {fileID: 21300000, guid: 658b62b0284e0c14897560566e64eec3, type: 3}
   character: {fileID: 7446804720454689484, guid: 0c9db80250d789041ac88c753e6be851, type: 3}
+  startingWeapon: {fileID: 4255514822295802079, guid: c5b8372a0bdcfeb43abfe7f3154d9c38, type: 3}
   maxHp: 90
   recovery: 1
   speed: 3

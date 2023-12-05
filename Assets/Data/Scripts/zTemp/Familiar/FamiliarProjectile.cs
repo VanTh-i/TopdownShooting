@@ -11,7 +11,6 @@ public class FamiliarProjectile : PassiveItem
 
     protected override void ApplyModifier()
     {
-        base.ApplyModifier();
         familiarDamage += (int)passiveItemData.Multipler;
     }
     private void Update()
