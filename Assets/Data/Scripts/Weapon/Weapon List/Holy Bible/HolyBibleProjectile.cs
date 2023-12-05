@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HolyBibleProjectile : ThaiBehaviour
 {
-    protected float rotationSpeed = 300f;
+    protected float rotationSpeed = 500f;
     private Transform player;
 
     protected override void LoadComponents()

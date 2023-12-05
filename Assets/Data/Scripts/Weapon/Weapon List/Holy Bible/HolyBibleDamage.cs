@@ -21,6 +21,7 @@ public class HolyBibleDamage : EnemyImpact
             {
                 enemyStats.TakeDamage(holyBible.CurrDamage);
             }
+            SpawnExplosion();
         }
     }
 }

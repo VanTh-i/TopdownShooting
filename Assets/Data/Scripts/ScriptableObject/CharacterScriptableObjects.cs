@@ -19,6 +19,10 @@ public class CharacterScriptableObjects : ScriptableObject
     public GameObject Character { get => character; private set => character = value; }
 
     [SerializeField]
+    private GameObject startingWeapon;
+    public GameObject StartingWeapon { get => startingWeapon; private set => startingWeapon = value; }
+
+    [SerializeField]
     private int maxHp;
     public int MaxHp { get => maxHp; private set => maxHp = value; }
 
