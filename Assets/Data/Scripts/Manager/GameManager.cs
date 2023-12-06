@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     };
 
     public bool isGameOver = false;
-    public bool upgrade;
+    public bool choosingUpgrade;
 
     public GameState currentState;
     public GameState previousState;
@@ -27,21 +27,21 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public GameObject pauseScreen;
     public GameObject resultsScreen;
-    public GameObject statsScreen;
     public GameObject levelUpScreen;
 
 
     [Header("Stats UI")]
     public TextMeshProUGUI maxHPDisplay;
     public TextMeshProUGUI recoveryDisplay;
+    public TextMeshProUGUI strengthDisplay;
     public TextMeshProUGUI moveSpeedDisplay;
-    public TextMeshProUGUI attackDamageDisplay;
-    public TextMeshProUGUI specialDamageDisplay;
 
     [Header("Result UI")]
     public TextMeshProUGUI timeSurvivalDisplay;
     public Image chosenCharacters;
     public TextMeshProUGUI charactersName;
+    public List<Image> chosenWeaponUI = new List<Image>(6);
+    public List<Image> chosenPassiveItemUI = new List<Image>(6);
 
     [Header("Stopwatch")]
     public float timeLimit;
@@ -66,7 +66,6 @@ public class GameManager : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
-        statsScreen.SetActive(false);
         levelUpScreen.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -95,9 +94,9 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.LevelUp:
-                if (!upgrade)
+                if (!choosingUpgrade)
                 {
-                    upgrade = true;
+                    choosingUpgrade = true;
                     Time.timeScale = 0f;
                     levelUpScreen.SetActive(true);
                 }
@@ -108,7 +107,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        StatsResult();
     }
 
     public void ChangeState(GameState newState)
@@ -149,26 +147,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-    private void StatsResult()
-    {
-        if (Input.GetKey(KeyCode.Tab))
-        {
-            if (currentState == GameState.Paused || currentState == GameState.GameOver)
-            {
-                return;
-            }
-            else
-            {
-                statsScreen.SetActive(true);
-            }
-        }
-        else
-        {
-            statsScreen.SetActive(false);
-        }
-    }
-
     public void GameOver()
     {
         timeSurvivalDisplay.text = stopwatchDisplay.text;
@@ -183,16 +161,51 @@ public class GameManager : MonoBehaviour
         chosenCharacters.sprite = characterData.CharacterIcon;
         charactersName.text = characterData.Name;
     }
+    public void ChosenWeaponAndPassiveItemUI(List<Image> chosenWeaponData, List<Image> chosenPassiveItemData)
+    {
+        if (chosenWeaponData.Count != chosenWeaponUI.Count || chosenPassiveItemData.Count != chosenPassiveItemUI.Count)
+        {
+            Debug.Log("different lengths");
+            return;
+        }
+
+        for (int i = 0; i < chosenWeaponUI.Count; i++)
+        {
+            if (chosenWeaponData[i].sprite)
+            {
+                chosenWeaponUI[i].enabled = true;
+                chosenWeaponUI[i].sprite = chosenWeaponData[i].sprite;
+            }
+            else
+            {
+                chosenWeaponUI[i].enabled = false;
+            }
+        }
+
+        for (int i = 0; i < chosenPassiveItemUI.Count; i++)
+        {
+            if (chosenPassiveItemData[i].sprite)
+            {
+                chosenPassiveItemUI[i].enabled = true;
+                chosenPassiveItemUI[i].sprite = chosenPassiveItemData[i].sprite;
+            }
+            else
+            {
+                chosenPassiveItemUI[i].enabled = false;
+            }
+        }
+    }
 
     private void UpdateStopwatch()
     {
         stopwatchTime += Time.deltaTime;
         UpdateStopwatchTimeDisplay();
 
-        // if (stopwatchTime >= timeLimit)
-        // {
-        //     GameOver();
-        // }
+        if (stopwatchTime >= timeLimit)
+        {
+            GameOver();
+            // victory
+        }
     }
     private void UpdateStopwatchTimeDisplay()
     {
@@ -207,9 +220,29 @@ public class GameManager : MonoBehaviour
     }
     public void EndLevelUp()
     {
-        upgrade = false;
+        choosingUpgrade = false;
         Time.timeScale = 1f;
         levelUpScreen.SetActive(false);
         ChangeState(GameState.GamePlay);
     }
+
+
+    // private void StatsResult()
+    // {
+    //     if (Input.GetKey(KeyCode.Tab))
+    //     {
+    //         if (currentState == GameState.Paused || currentState == GameState.GameOver)
+    //         {
+    //             return;
+    //         }
+    //         else
+    //         {
+    //             statsScreen.SetActive(true);
+    //         }
+    //     }
+    //     else
+    //     {
+    //         statsScreen.SetActive(false);
+    //     }
+    // }
 }

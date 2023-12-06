@@ -59,10 +59,10 @@ public class PlayerStats : MonoBehaviour
         set
         {
             currentStrength = value;
-            // if (GameManager.Instance != null)
-            // {
-            //     GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed.ToString("F2");
-            // }
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.strengthDisplay.text = "+" + currentStrength;
+            }
         }
     }
     public float CurrentSpeed
@@ -80,7 +80,6 @@ public class PlayerStats : MonoBehaviour
 
     #endregion
 
-    public List<GameObject> spawnerWeaponsList;
 
     [Header("Level/Exp")]
     public int experience = 0;
@@ -89,11 +88,11 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Inventory")]
     private InventoryManager inventory;
-    protected int skillIconIndex;
-    protected int passiveItemIndex;
-    [HideInInspector] public int auraItemIndex;
-    [HideInInspector] public int familiarItemIndex;
-    public GameObject[] passiveItemPrefabs;
+    private int weaponIndex;
+    private int passiveItemIndex;
+
+    public GameObject weaponTest;
+    public GameObject passiveItemTest1, passiveItemTest2;
 
     [Header("Health Bar and Experience Bar")]
     public Image healthBar;
@@ -128,7 +127,10 @@ public class PlayerStats : MonoBehaviour
         LoadModel(characterStats.Character);
         SpawnWeapon(characterStats.StartingWeapon);
 
-        LoadSkillUI(characterStats.IconAttack, characterStats.IconSpecial);
+        // SpawnWeapon(weaponTest);
+        SpawnPassiveItem(passiveItemTest1);
+        // SpawnPassiveItem(passiveItemTest2);
+
     }
 
     private void Start()
@@ -139,7 +141,9 @@ public class PlayerStats : MonoBehaviour
         //show chi so
         GameManager.Instance.maxHPDisplay.text = "" + currentMaxHP;
         GameManager.Instance.recoveryDisplay.text = "" + currentRecovery;
+        GameManager.Instance.strengthDisplay.text = "+" + currentStrength;
         GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed.ToString("F2");
+
         GameManager.Instance.ResultChosenCharacters(characterStats); //show player da choi khi chet
 
         InvokeRepeating("Recovery", 0f, 5f); // tu hoi phuc moi 2s
@@ -197,6 +201,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (!GameManager.Instance.isGameOver)
         {
+            GameManager.Instance.ChosenWeaponAndPassiveItemUI(inventory.weaponUISlots, inventory.passiveItemUiSlots);
             GameManager.Instance.GameOver();
         }
     }
@@ -251,39 +256,26 @@ public class PlayerStats : MonoBehaviour
 
     public void SpawnWeapon(GameObject weapon)
     {
-        GameObject spawnWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
-        spawnWeapon.transform.SetParent(transform);
-        spawnerWeaponsList.Add(spawnWeapon);
-    }
-
-    public void LoadSkillUI(Sprite icon1, Sprite icon2)
-    {
-        inventory.AddUISkill(skillIconIndex, icon1);
-        skillIconIndex++;
-        inventory.AddUISkill(skillIconIndex, icon2);
-        skillIconIndex++;
-    }
-
-    public void SpawnPassiveItem(int prefabIndex)
-    {
-        if (passiveItemIndex >= inventory.passiveItemSlots.Count - 1)
+        if (weaponIndex >= inventory.listWeaponSlots.Count - 1)
         {
-            Debug.LogError("Full slot passive");
+            Debug.LogWarning("Inventory is full");
             return;
         }
-        GameObject spawnPassive = Instantiate(passiveItemPrefabs[prefabIndex], transform.position + passiveItemPrefabs[prefabIndex].transform.position, Quaternion.identity);
-        spawnPassive.transform.SetParent(transform);
-        inventory.AddPassiveItem(passiveItemIndex, spawnPassive.GetComponent<PassiveItem>());
-
-        if (prefabIndex == 0)
+        GameObject spawnWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        spawnWeapon.transform.SetParent(transform);
+        inventory.AddWeapon(weaponIndex, spawnWeapon.GetComponent<WeaponController>());
+        weaponIndex++;
+    }
+    public void SpawnPassiveItem(GameObject passiveItem)
+    {
+        if (passiveItemIndex >= inventory.listPassiveItemSlots.Count - 1)
         {
-            auraItemIndex = passiveItemIndex;
-            passiveItemIndex++;
+            Debug.LogWarning("Inventory is full");
+            return;
         }
-        else if (prefabIndex == 1)
-        {
-            familiarItemIndex = passiveItemIndex;
-            passiveItemIndex++;
-        }
+        GameObject spawnPassiveItem = Instantiate(passiveItem, transform.position, Quaternion.identity);
+        spawnPassiveItem.transform.SetParent(transform);
+        inventory.AddPassiveItem(passiveItemIndex, spawnPassiveItem.GetComponent<PassiveItem>());
+        passiveItemIndex++;
     }
 }

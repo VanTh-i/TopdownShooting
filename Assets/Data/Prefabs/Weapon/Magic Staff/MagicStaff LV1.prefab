@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8140541164890588882}
   - component: {fileID: 7625550900249847306}
   m_Layer: 0
-  m_Name: MagicStaff
+  m_Name: MagicStaff LV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

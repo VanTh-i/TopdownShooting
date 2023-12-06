@@ -17,10 +17,11 @@ public class SpecialController : ThaiBehaviour
         get => currDamage;
         set
         {
-            currDamage = value; if (GameManager.Instance != null)
-            {
-                GameManager.Instance.specialDamageDisplay.text = "" + currDamage.ToString("F2");
-            }
+            currDamage = value;
+            // if (GameManager.Instance != null)
+            // {
+            //     GameManager.Instance.specialDamageDisplay.text = "" + currDamage.ToString("F2");
+            // }
         }
     }
 
@@ -35,7 +36,7 @@ public class SpecialController : ThaiBehaviour
     protected virtual void Start()
     {
         currHitDelay = 0f;
-        GameManager.Instance.specialDamageDisplay.text = "" + currDamage.ToString("F2");
+        //GameManager.Instance.specialDamageDisplay.text = "" + currDamage.ToString("F2");
 
     }
     protected virtual void Update()

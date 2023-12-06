@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WeaponScriptableObject", menuName = "ScriptableObject/Weapon")]
 public class WeaponScriptableObject : ScriptableObject
 {
+    [SerializeField] private Sprite icon;
+    public Sprite Icon { get => icon; private set => icon = value; }
+
     [SerializeField] private int damage;
     public int Damage { get => damage; private set => damage = value; }
 
@@ -19,4 +22,10 @@ public class WeaponScriptableObject : ScriptableObject
 
     [SerializeField] private float range;
     public float Range { get => range; private set => range = value; }
+
+    [SerializeField] private int level;
+    public int Level { get => level; private set => level = value; }
+
+    [SerializeField] private GameObject nextLevelPrefab;
+    public GameObject NextLevelPrefab { get => nextLevelPrefab; private set => nextLevelPrefab = value; }
 }

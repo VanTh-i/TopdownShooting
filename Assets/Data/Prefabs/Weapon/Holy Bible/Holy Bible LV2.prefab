@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 6208738029060885639}
   - component: {fileID: 2483835240648068040}
   m_Layer: 0
-  m_Name: Holy Bible
+  m_Name: Holy Bible LV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74918066f61f47242b02b9eee0c62f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponStats: {fileID: 11400000, guid: 181ceb7a90299814abeabfb5e9a66281, type: 2}
+  weaponStats: {fileID: 11400000, guid: eda81af6299a4bf4c9a1d41e75de2dbf, type: 2}
   currHitDelay: 0
   hitDelay: 0
   currPierce: 0

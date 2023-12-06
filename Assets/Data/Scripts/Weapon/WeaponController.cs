@@ -19,10 +19,11 @@ public class WeaponController : ThaiBehaviour
         get => currDamage;
         set
         {
-            currDamage = value; if (GameManager.Instance != null)
-            {
-                GameManager.Instance.attackDamageDisplay.text = "" + currDamage.ToString("F2");
-            }
+            currDamage = value;
+            // if (GameManager.Instance != null)
+            // {
+            //     GameManager.Instance.attackDamageDisplay.text = "" + currDamage.ToString("F2");
+            // }
         }
     }
 
@@ -38,7 +39,7 @@ public class WeaponController : ThaiBehaviour
     {
         currHitDelay = 0f;
 
-        GameManager.Instance.attackDamageDisplay.text = "" + currDamage.ToString("F2");
+        //GameManager.Instance.attackDamageDisplay.text = "" + currDamage.ToString("F2");
 
     }
     protected virtual void Update()
