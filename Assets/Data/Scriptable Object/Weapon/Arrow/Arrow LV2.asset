@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4342ad7ef75f0de43860b4af3ccaab79, type: 3}
   m_Name: Arrow LV2
   m_EditorClassIdentifier: 
-  name: Arrow
-  description: Damage increased by 3.
+  name: Arrow LV2
+  description: Damage increased by 10.
   icon: {fileID: 21300000, guid: c2a9b8989862a1b46b7d34489da58b4a, type: 3}
-  damage: 15
+  damage: 20
   speed: 0
   hitDelay: 2
   pierce: 3
   range: 7
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 4255514822295802079, guid: 3efe041e0fe187b42a10156596a449f1, type: 3}

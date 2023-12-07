@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4342ad7ef75f0de43860b4af3ccaab79, type: 3}
   m_Name: HolyBible LV2
   m_EditorClassIdentifier: 
-  name: Holy Bible
-  description: Damage increased by 3.
+  name: Holy Bible LV2
+  description: Damage increased by 5.
   icon: {fileID: 21300000, guid: 6d54e8cf01fa23342a34118cc888c459, type: 3}
-  damage: 11
+  damage: 15
   speed: 0
   hitDelay: 8
   pierce: 0
   range: 0
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 1627917390381187812, guid: f95d018742a798342abbc4eaa14bdec6, type: 3}

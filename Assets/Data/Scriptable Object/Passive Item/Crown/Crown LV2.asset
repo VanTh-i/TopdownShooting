@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0302bd75613b6a147bd873ac9931cf47, type: 3}
   m_Name: Crown LV2
   m_EditorClassIdentifier: 
-  name: Crown
+  name: Crown LV2
   description: Raises inflicted damage by 4.
   icon: {fileID: 21300000, guid: 926cd6d9d5376c94c94aa193c71c359f, type: 3}
   multipler: 4
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 5603466087950109293, guid: d38a47e789837d8409e597561a237752, type: 3}

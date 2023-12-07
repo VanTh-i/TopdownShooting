@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4342ad7ef75f0de43860b4af3ccaab79, type: 3}
   m_Name: HolyBible LV1
   m_EditorClassIdentifier: 
-  name: Holy Bible
+  name: Holy Bible LV1
   description: Deal damage around the character.
   icon: {fileID: 21300000, guid: 6d54e8cf01fa23342a34118cc888c459, type: 3}
-  damage: 8
+  damage: 10
   speed: 0
   hitDelay: 8
   pierce: 0
