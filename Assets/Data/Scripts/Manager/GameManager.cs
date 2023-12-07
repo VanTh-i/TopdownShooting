@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public bool isGameOver = false;
     public bool choosingUpgrade;
 
+    public GameObject playerObject;
+
     public GameState currentState;
     public GameState previousState;
 
@@ -217,6 +219,7 @@ public class GameManager : MonoBehaviour
     public void StartLevelUp()
     {
         ChangeState(GameState.LevelUp);
+        playerObject.SendMessage("RemoveAndApplyUpgrades");
     }
     public void EndLevelUp()
     {

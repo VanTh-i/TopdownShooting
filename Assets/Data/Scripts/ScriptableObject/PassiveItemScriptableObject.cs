@@ -6,6 +6,14 @@ using UnityEngine;
 
 public class PassiveItemScriptableObject : ScriptableObject
 {
+    [SerializeField]
+    private new string name;
+    public string Name { get => name; private set => name = value; }
+
+    [SerializeField]
+    private string description;
+    public string Description { get => description; private set => description = value; }
+
     [SerializeField] private Sprite icon;
     public Sprite Icon { get => icon; private set => icon = value; }
 

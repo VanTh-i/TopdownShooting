@@ -91,9 +91,6 @@ public class PlayerStats : MonoBehaviour
     private int weaponIndex;
     private int passiveItemIndex;
 
-    public GameObject weaponTest;
-    public GameObject passiveItemTest1, passiveItemTest2;
-
     [Header("Health Bar and Experience Bar")]
     public Image healthBar;
     public Image expBar;
@@ -126,10 +123,6 @@ public class PlayerStats : MonoBehaviour
         //player Load
         LoadModel(characterStats.Character);
         SpawnWeapon(characterStats.StartingWeapon);
-
-        // SpawnWeapon(weaponTest);
-        SpawnPassiveItem(passiveItemTest1);
-        // SpawnPassiveItem(passiveItemTest2);
 
     }
 

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4342ad7ef75f0de43860b4af3ccaab79, type: 3}
   m_Name: MagicStaff LV2
   m_EditorClassIdentifier: 
+  name: Magic Staff
+  description: Damage increased by 3.
   icon: {fileID: 21300000, guid: b5e860f4ddc34f9479e99e8576ccca3d, type: 3}
   damage: 13
   speed: 0
