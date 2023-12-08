@@ -11,8 +11,10 @@ public class EnemyMovement : ThaiBehaviour
 
     protected override void LoadComponents()
     {
-        enemyStats = GetComponentInParent<EnemyStats>();
+        enemyStats = transform.parent.GetChild(1).GetComponent<EnemyStats>();
+
         enemyDir = transform.parent.GetComponent<Transform>();
+
         player = FindPlayer.GetPlayer();
         if (player == null)
         {

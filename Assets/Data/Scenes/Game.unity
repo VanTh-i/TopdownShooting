@@ -6721,7 +6721,7 @@ MonoBehaviour:
       enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 1413203333908883762, guid: d2da5f53566a2f1419fad4f8702c9554, type: 3}
-    - enemyName: Bat 2
+    - enemyName: Bat
       enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 3078066447260828687, guid: 7b2eaeac384a62e4a903401a7bbcda11, type: 3}
@@ -6755,8 +6755,8 @@ MonoBehaviour:
     spawnCount: 0
     spawnInterval: 3
   currWaveCount: 0
-  waveInterval: 99
-  maxEnemiesAllowed: 5
+  waveInterval: 60
+  maxEnemiesAllowed: 10
   enemiesAlive: 0
   maxEnemiesReached: 0
   spawnPosition:
@@ -7525,7 +7525,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6056459542897263015}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &974975008
 MonoBehaviour:
@@ -15134,7 +15134,6 @@ Transform:
   m_Children:
   - {fileID: 513571106}
   - {fileID: 6056459543284525662}
-  - {fileID: 6056459543508442389}
   - {fileID: 974975007}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -15201,34 +15200,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pullForce: 300
---- !u!1 &6056459543508442388
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6056459543508442389}
-  m_Layer: 0
-  m_Name: Player Direction
-  m_TagString: ShootPoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6056459543508442389
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056459543508442388}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6056459542897263015}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

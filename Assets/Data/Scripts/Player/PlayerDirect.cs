@@ -4,31 +4,35 @@ using UnityEngine;
 
 public class PlayerDirect : ThaiBehaviour
 {
-    protected Vector3 targetPosition;
+    protected Vector2 moveDir;
+    protected SpriteRenderer playerSprite;
+    public float lastHorizontalVector;
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        playerSprite = GetComponent<SpriteRenderer>();
+    }
     private void FixedUpdate()
     {
-        GetMousePos();
         PlayerDirection();
     }
-    private void GetMousePos()
-    {
-        targetPosition = InputManager.Instance.MousePos;
-        targetPosition.z = 0;
-    }
+
     private void PlayerDirection()
     {
-        Vector3 diff = targetPosition - transform.position;
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-
-        Vector3 aimDir = Vector3.one;
-        if (rot_z > 90 || rot_z < -90)
+        moveDir = InputManager.Instance.MoveDir;
+        if (moveDir.x != 0)
         {
-            aimDir.x = 1f;
+            lastHorizontalVector = moveDir.x;
+        }
+
+        if (lastHorizontalVector < 0)
+        {
+            playerSprite.flipX = false;
         }
         else
         {
-            aimDir.x = -1f;
+            playerSprite.flipX = true;
         }
-        transform.localScale = aimDir;
     }
 }
