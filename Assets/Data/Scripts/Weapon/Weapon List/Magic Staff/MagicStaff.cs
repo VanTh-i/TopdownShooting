@@ -38,7 +38,6 @@ public class MagicStaff : WeaponController
 
             if (Vector3.Distance(transform.parent.position, closestEnemy.transform.position) <= currRange)
             {
-                Debug.Log("Magic attack");
                 Vector3 spawnPos = shootPoint.transform.position;
                 Quaternion rot = shootPoint.transform.rotation;
                 Transform bullet = BulletSpawn.Instance.Spawn(spawnPos, rot, 2);

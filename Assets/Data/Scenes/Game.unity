@@ -6997,14 +6997,14 @@ MonoBehaviour:
   waves:
   - waveName: Wave 1
     enemyTypes:
-    - enemyName: Bat
+    - enemyName: slime
       enemyCount: 50
       spawnCount: 0
-      enemyPrefab: {fileID: 2532807017667438992, guid: 322f43c81b94a144a95456e62b140a74, type: 3}
-    - enemyName: Bat
+      enemyPrefab: {fileID: 8113727090440078884, guid: 36f9749f521370f478c875a9f931bdda, type: 3}
+    - enemyName: slime
       enemyCount: 50
       spawnCount: 0
-      enemyPrefab: {fileID: 3815937026665283732, guid: 36f88477c3de2974ea6e4bf5cc354e12, type: 3}
+      enemyPrefab: {fileID: 7852717934789078804, guid: 049c26e745f5a8a408f58b2941f3e08c, type: 3}
     waveQuantity: 0
     spawnCount: 0
     spawnInterval: 5
@@ -7014,29 +7014,42 @@ MonoBehaviour:
       enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 1413203333908883762, guid: d2da5f53566a2f1419fad4f8702c9554, type: 3}
-    - enemyName: Bat 2
-      enemyCount: 50
-      spawnCount: 0
-      enemyPrefab: {fileID: 3078066447260828687, guid: 7b2eaeac384a62e4a903401a7bbcda11, type: 3}
-    waveQuantity: 0
-    spawnCount: 0
-    spawnInterval: 3
-  - waveName: Wave 3
-    enemyTypes:
     - enemyName: Bat
       enemyCount: 50
       spawnCount: 0
-      enemyPrefab: {fileID: 1413203333908883762, guid: d2da5f53566a2f1419fad4f8702c9554, type: 3}
-    - enemyName: Bat 2
-      enemyCount: 50
-      spawnCount: 0
       enemyPrefab: {fileID: 3078066447260828687, guid: 7b2eaeac384a62e4a903401a7bbcda11, type: 3}
     waveQuantity: 0
     spawnCount: 0
-    spawnInterval: 3
+    spawnInterval: 5
+  - waveName: Wave 3
+    enemyTypes:
+    - enemyName: boar
+      enemyCount: 50
+      spawnCount: 0
+      enemyPrefab: {fileID: 3815937026665283732, guid: 36f88477c3de2974ea6e4bf5cc354e12, type: 3}
+    - enemyName: boar
+      enemyCount: 50
+      spawnCount: 0
+      enemyPrefab: {fileID: 2532807017667438992, guid: 322f43c81b94a144a95456e62b140a74, type: 3}
+    waveQuantity: 0
+    spawnCount: 0
+    spawnInterval: 5
+  - waveName: Wave 4
+    enemyTypes:
+    - enemyName: dino
+      enemyCount: 50
+      spawnCount: 0
+      enemyPrefab: {fileID: 4806965918829371496, guid: 7b6fc3afa6470c74b990ca313b941f20, type: 3}
+    - enemyName: dino
+      enemyCount: 50
+      spawnCount: 0
+      enemyPrefab: {fileID: 5819101056393025937, guid: a3aedf4e85a740a4da1cb1e88a5d3eb6, type: 3}
+    waveQuantity: 0
+    spawnCount: 0
+    spawnInterval: 5
   currWaveCount: 0
   waveInterval: 60
-  maxEnemiesAllowed: 10
+  maxEnemiesAllowed: 200
   enemiesAlive: 0
   maxEnemiesReached: 0
   spawnPosition:
@@ -16192,7 +16205,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

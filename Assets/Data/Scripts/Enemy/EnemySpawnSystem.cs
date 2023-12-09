@@ -118,15 +118,16 @@ public class EnemySpawnSystem : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void OnEnemyKilled()
+    {
+        enemiesAlive--;
 
         if (enemiesAlive < maxEnemiesAllowed)
         {
             maxEnemiesReached = false;
         }
-    }
-    public void OnEnemyKilled()
-    {
-        enemiesAlive--;
     }
 
     private IEnumerator BeginNextWave()

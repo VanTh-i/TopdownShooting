@@ -12,7 +12,7 @@ public class BatMovement : EnemyMovement
         base.Action();
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (Time.time - lastCollisionTime >= collisionCooldown)
         {

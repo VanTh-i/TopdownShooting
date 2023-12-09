@@ -34,7 +34,7 @@ public class PlayerMovement : ThaiBehaviour
     {
         if (box2d != null) return;
         box2d = GetComponent<BoxCollider2D>();
-        this.box2d.isTrigger = false;
+        //this.box2d.isTrigger = true;
     }
 
     private void FixedUpdate()
