@@ -7872,6 +7872,9 @@ MonoBehaviour:
   - weaponUpgradeIndex: 2
     initialWeapon: {fileID: 1627917390381187812, guid: 4471e8884a85f874b81ca311a075a8d3, type: 3}
     weaponData: {fileID: 11400000, guid: 181ceb7a90299814abeabfb5e9a66281, type: 2}
+  - weaponUpgradeIndex: 3
+    initialWeapon: {fileID: 6784144220639115597, guid: 6437bee254d2d6947a19cf1666cc808f, type: 3}
+    weaponData: {fileID: 11400000, guid: 485bfb38e889bed4d8a9dc715e8e1256, type: 2}
   passiveItemUpgradeOptions:
   - passiveItemUpgradeIndex: 0
     initialPassiveItem: {fileID: 8484751806190869699, guid: f809e73544a9e434094fddad76cc4d72, type: 3}
@@ -8192,6 +8195,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001496064}
   m_CullTransparentMesh: 1
+--- !u!1001 &1003801723
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2011368500}
+    m_Modifications:
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648837, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648839, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_Name
+      value: Slash
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292394415353648839, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+--- !u!4 &1003801724 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5292394415353648834, guid: f05f9587e4915004c9cd2957bc1e8056, type: 3}
+  m_PrefabInstance: {fileID: 1003801723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1015425802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10539,7 +10612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameOver: 0
   choosingUpgrade: 0
-  playerObject: {fileID: 974975006}
+  playerObject: {fileID: 6056459542897263010}
   currentState: 0
   previousState: 0
   pauseScreen: {fileID: 831667780}
@@ -13111,6 +13184,7 @@ MonoBehaviour:
   - {fileID: 481962348}
   - {fileID: 274774496}
   - {fileID: 1015425803}
+  - {fileID: 1003801724}
   poolObjs: []
   poolHolder: {fileID: 998439603}
 --- !u!1 &1755050893
@@ -14771,6 +14845,7 @@ Transform:
   - {fileID: 481962348}
   - {fileID: 274774496}
   - {fileID: 1015425803}
+  - {fileID: 1003801724}
   m_Father: {fileID: 1732763111}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16178,23 +16253,53 @@ MonoBehaviour:
   currentSpeed: 0
   experience: 0
   level: 1
-  experienceCap: 0
+  experienceCap: 50
   healthBar: {fileID: 615428216}
   expBar: {fileID: 1683722830}
   levelText: {fileID: 2019521418}
   levelRanges:
-  - startLevel: 1
+  - startLevel: 2
     endLevel: 5
     experienceCapIncrease: 10
   - startLevel: 6
     endLevel: 10
-    experienceCapIncrease: 10
+    experienceCapIncrease: 20
   - startLevel: 11
     endLevel: 15
-    experienceCapIncrease: 10
+    experienceCapIncrease: 40
   - startLevel: 16
     endLevel: 20
-    experienceCapIncrease: 10
+    experienceCapIncrease: 60
+  - startLevel: 21
+    endLevel: 25
+    experienceCapIncrease: 80
+  - startLevel: 26
+    endLevel: 30
+    experienceCapIncrease: 100
+  - startLevel: 31
+    endLevel: 35
+    experienceCapIncrease: 110
+  - startLevel: 36
+    endLevel: 40
+    experienceCapIncrease: 120
+  - startLevel: 41
+    endLevel: 45
+    experienceCapIncrease: 130
+  - startLevel: 46
+    endLevel: 50
+    experienceCapIncrease: 140
+  - startLevel: 51
+    endLevel: 55
+    experienceCapIncrease: 150
+  - startLevel: 56
+    endLevel: 60
+    experienceCapIncrease: 160
+  - startLevel: 61
+    endLevel: 65
+    experienceCapIncrease: 170
+  - startLevel: 66
+    endLevel: 70
+    experienceCapIncrease: 180
 --- !u!61 &6056459542897263014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16300,4 +16405,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721b547a785646b4683fbaa0b1af8416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pullForce: 300
+  pullForce: 500

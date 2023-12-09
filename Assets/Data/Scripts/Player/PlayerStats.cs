@@ -124,11 +124,12 @@ public class PlayerStats : MonoBehaviour
         LoadModel(characterStats.Character);
         SpawnWeapon(characterStats.StartingWeapon);
 
+
     }
 
     private void Start()
     {
-        experienceCap = levelRanges[0].experienceCapIncrease; //khoi tao experienceCap tai lv dau tien
+        //experienceCap = levelRanges[0].experienceCapIncrease; //khoi tao experienceCap tai lv dau tien
 
         //GameManager.Instance.maxHPDisplay.text = "" + currentHp;
         //show chi so
@@ -155,10 +156,15 @@ public class PlayerStats : MonoBehaviour
     }
     private void LevelUpChecker()
     {
+        if (level == 70) //cap lv o 70
+        {
+            Debug.Log("Reached maximum level!");
+            return;
+        }
         if (experience >= experienceCap)
         {
             level++;
-            CurrentMaxHP += 10;
+            CurrentMaxHP += 2;
             Debug.Log("Level Up to " + level);
             experience -= experienceCap;
 
@@ -190,7 +196,7 @@ public class PlayerStats : MonoBehaviour
 
         UpdateHealthBar();
     }
-    private void PlayerDead()
+    public void PlayerDead()
     {
         if (!GameManager.Instance.isGameOver)
         {

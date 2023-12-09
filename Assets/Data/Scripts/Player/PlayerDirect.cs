@@ -6,7 +6,7 @@ public class PlayerDirect : ThaiBehaviour
 {
     protected Vector2 moveDir;
     protected SpriteRenderer playerSprite;
-    public float lastHorizontalVector;
+    protected float lastHorizontalVector;
 
     protected override void LoadComponents()
     {

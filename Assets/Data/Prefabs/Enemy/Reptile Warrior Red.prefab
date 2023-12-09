@@ -205,12 +205,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: Gold Gem
-    itemPrefab: {fileID: 2803380794448510200, guid: 6c7a78a479244a64290427d1b3e739e8, type: 3}
-    dropRate: 10
-  - name: Silver Gem
-    itemPrefab: {fileID: 2983447726183794814, guid: 6a89be54f4aeb4d4289dee1919638f0f, type: 3}
+  - name: Blue Gem
+    itemPrefab: {fileID: 6009203678483345973, guid: c7fd64676bd47a943a474beb2f2ba7d9, type: 3}
     dropRate: 70
+  - name: Gren Gem
+    itemPrefab: {fileID: 3805322613041797347, guid: 5de720a4e168e654bb83071cb53012c6, type: 3}
+    dropRate: 15
+  - name: Red Gem
+    itemPrefab: {fileID: 6143026828224880271, guid: cced19346d80bbc42951acfa5f4af07a, type: 3}
+    dropRate: 5
 --- !u!1 &5338199769723748127
 GameObject:
   m_ObjectHideFlags: 0

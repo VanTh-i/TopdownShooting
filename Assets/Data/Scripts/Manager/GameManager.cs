@@ -205,8 +205,9 @@ public class GameManager : MonoBehaviour
 
         if (stopwatchTime >= timeLimit)
         {
-            GameOver();
-            // victory
+            //GameOver();
+            // victory, fix late
+            playerObject.SendMessage("PlayerDead");
         }
     }
     private void UpdateStopwatchTimeDisplay()
@@ -219,7 +220,7 @@ public class GameManager : MonoBehaviour
     public void StartLevelUp()
     {
         ChangeState(GameState.LevelUp);
-        playerObject.SendMessage("RemoveAndApplyUpgrades");
+        playerObject.transform.GetChild(2).SendMessage("RemoveAndApplyUpgrades");
     }
     public void EndLevelUp()
     {
