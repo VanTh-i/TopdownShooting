@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawningExplosion : DestroyByTime
+public class BackToPool : DestroyByTime
 {
     // keo prefab ve lai pool
     protected override void DestroyObject()

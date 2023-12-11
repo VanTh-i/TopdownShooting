@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemyStats : ThaiBehaviour
 {
@@ -40,6 +41,7 @@ public class EnemyStats : ThaiBehaviour
     {
         currentMaxHp -= dmg;
         StartCoroutine(DamageFlash());
+        DamagePopUp(dmg);
 
         if (knockbackForce > 0)
         {
@@ -76,6 +78,14 @@ public class EnemyStats : ThaiBehaviour
         enemySprite.color = dmgColor;
         yield return new WaitForSeconds(0.2f);
         enemySprite.color = originalColor;
+    }
+
+    protected void DamagePopUp(int dmgText)
+    {
+        Transform dmgPopup = FxSpawn.Instance.Spawn(transform.parent.position, transform.rotation, 4);
+        dmgPopup.gameObject.SetActive(true);
+        dmgPopup.GetComponentInChildren<TextMeshPro>().text = dmgText.ToString();
+
     }
 
     protected virtual void Kill()

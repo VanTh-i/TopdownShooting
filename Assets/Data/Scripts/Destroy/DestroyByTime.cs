@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyByTime : Destroy
 {
-    protected float delay = 1f;
+    public float delay = 1f;
     protected float timer = 0f;
 
     private void OnEnable()
