@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Arrow LV1
   description: Fire arrow the faced direction.
   icon: {fileID: 21300000, guid: c2a9b8989862a1b46b7d34489da58b4a, type: 3}
-  damage: 10
+  damage: 1
   speed: 0
   hitDelay: 2
   pierce: 3

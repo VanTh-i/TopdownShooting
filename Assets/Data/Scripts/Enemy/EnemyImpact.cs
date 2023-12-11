@@ -20,7 +20,7 @@ public class EnemyImpact : ThaiBehaviour
     }
     protected virtual void SpawnExplosion()
     {
-        Transform explosion = FxSpawn.Instance.Spawn(transform.position, transform.rotation, 1);
-        explosion.gameObject.SetActive(true);
+        // Transform explosion = FxSpawn.Instance.Spawn(transform.position, transform.rotation, 1);
+        // explosion.gameObject.SetActive(true);
     }
 }

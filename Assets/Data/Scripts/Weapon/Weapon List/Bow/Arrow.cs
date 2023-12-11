@@ -37,7 +37,7 @@ public class Arrow : EnemyImpact
             DestroyObject();
             if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
             {
-                enemyStats.TakeDamage(GetCurrentDamage());
+                enemyStats.TakeDamage(GetCurrentDamage(), transform.parent.position);
             }
 
         }

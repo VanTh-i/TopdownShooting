@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Sword LV1
   description: Deal damage in the faced direction.
   icon: {fileID: 21300000, guid: 88a3866f7b810434494cb36531dd9735, type: 3}
-  damage: 10
+  damage: 1
   speed: 0
   hitDelay: 3
   pierce: 0

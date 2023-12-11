@@ -30,7 +30,7 @@ public class FamiliarProjectile : PassiveItem
 
             if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
             {
-                enemyStats.TakeDamage(familiarDamage);
+                //enemyStats.TakeDamage(familiarDamage);
             }
         }
     }

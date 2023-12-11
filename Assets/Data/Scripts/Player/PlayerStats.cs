@@ -96,6 +96,11 @@ public class PlayerStats : MonoBehaviour
     public Image expBar;
     public TextMeshProUGUI levelText;
 
+    [Header("Damage Feedback")]
+    private Color dmgColor = Color.red;
+    private Color originalColor;
+    private SpriteRenderer playerSprite;
+
     [System.Serializable]
     public class LevelRange
     {
@@ -104,7 +109,6 @@ public class PlayerStats : MonoBehaviour
         public int experienceCapIncrease;
     }
     public List<LevelRange> levelRanges;
-
 
 
     private void Awake()
@@ -124,6 +128,7 @@ public class PlayerStats : MonoBehaviour
         LoadModel(characterStats.Character);
         SpawnWeapon(characterStats.StartingWeapon);
 
+        playerSprite = transform.GetChild(3).GetComponent<SpriteRenderer>(); // model nam o vi tri thu 4 trong obj cha
 
     }
 
@@ -145,6 +150,8 @@ public class PlayerStats : MonoBehaviour
         UpdateHealthBar();
         UpdateExpBar();
         UpdateLevelText();
+
+        originalColor = playerSprite.color;
 
     }
 
@@ -188,6 +195,8 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         CurrentHp -= dmg;
+        StartCoroutine(DamageFlash());
+
         if (CurrentHp <= 0)
         {
             CurrentHp = 0;
@@ -195,6 +204,13 @@ public class PlayerStats : MonoBehaviour
         }
 
         UpdateHealthBar();
+    }
+    protected IEnumerator DamageFlash()
+    {
+        playerSprite.color = dmgColor;
+        yield return new WaitForSeconds(0.2f);
+        playerSprite.color = originalColor;
+
     }
     public void PlayerDead()
     {
@@ -276,5 +292,10 @@ public class PlayerStats : MonoBehaviour
         spawnPassiveItem.transform.SetParent(transform);
         inventory.AddPassiveItem(passiveItemIndex, spawnPassiveItem.GetComponent<PassiveItem>());
         passiveItemIndex++;
+    }
+
+    private void OnDestroy()
+    {
+        playerSprite.color = originalColor;
     }
 }

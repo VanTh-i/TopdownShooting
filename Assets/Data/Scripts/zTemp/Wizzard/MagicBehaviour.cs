@@ -35,7 +35,7 @@ public class MagicBehaviour : EnemyImpact
 
             if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
             {
-                enemyStats.TakeDamage(wizzardMagic.CurrDamage);
+                //enemyStats.TakeDamage(wizzardMagic.CurrDamage);
             }
         }
     }

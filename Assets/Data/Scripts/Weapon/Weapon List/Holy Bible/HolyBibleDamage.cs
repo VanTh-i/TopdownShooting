@@ -19,7 +19,7 @@ public class HolyBibleDamage : EnemyImpact
         {
             if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
             {
-                enemyStats.TakeDamage(GetCurrentDamage());
+                enemyStats.TakeDamage(GetCurrentDamage(), transform.parent.position);
             }
             SpawnExplosion();
         }

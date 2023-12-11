@@ -16,7 +16,7 @@ public class AuraDmgSender : PassiveItem
         {
             if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
             {
-                enemyStats.TakeDamage(auraDamage);
+                //enemyStats.TakeDamage(auraDamage);
             }
         }
     }

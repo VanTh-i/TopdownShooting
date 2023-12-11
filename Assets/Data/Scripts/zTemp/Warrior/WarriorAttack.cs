@@ -39,7 +39,7 @@ public class WarriorAttack : WeaponController
                 EnemyStats enemyStats = enemy.GetComponent<EnemyStats>();
                 if (enemyStats != null)
                 {
-                    enemyStats.TakeDamage(CurrDamage);
+                    //enemyStats.TakeDamage(CurrDamage);
                 }
                 BreakableProps breakableProps = enemy.GetComponent<BreakableProps>();
                 if (breakableProps != null)

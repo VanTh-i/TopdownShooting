@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnemyMovement : ThaiBehaviour
 {
     protected EnemyStats enemyStats;
-
     protected Transform player;
     protected Transform enemyDir;
+
+    private Vector2 knockbackVelocity;
+    private float knockbackDuration;
 
     protected override void LoadComponents()
     {
@@ -37,7 +39,16 @@ public class EnemyMovement : ThaiBehaviour
 
         if (Vector3.Distance(transform.parent.position, player.position) >= enemyStats.currentAttackRange)
         {
-            transform.parent.position += transform.forward * enemyStats.currentSpeed * Time.deltaTime;
+            if (knockbackDuration > 0)
+            {
+                transform.parent.position += (Vector3)knockbackVelocity * Time.deltaTime;
+                knockbackDuration -= Time.deltaTime;
+            }
+            else
+            {
+                transform.parent.position += transform.forward * enemyStats.currentSpeed * Time.deltaTime;
+
+            }
         }
         else
         {
@@ -65,6 +76,13 @@ public class EnemyMovement : ThaiBehaviour
             aimDir.x = +1f;
         }
         enemyDir.localScale = aimDir;
+    }
+
+    public void Knockback(Vector2 velocity, float duration)
+    {
+        if (knockbackDuration > 0) return;
+        knockbackVelocity = velocity;
+        knockbackDuration = duration;
     }
 
 }
