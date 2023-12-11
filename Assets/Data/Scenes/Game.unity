@@ -7117,7 +7117,7 @@ MonoBehaviour:
     spawnInterval: 5
   currWaveCount: 0
   waveInterval: 60
-  maxEnemiesAllowed: 200
+  maxEnemiesAllowed: 5
   enemiesAlive: 0
   maxEnemiesReached: 0
   spawnPosition:
