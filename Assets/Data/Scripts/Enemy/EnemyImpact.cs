@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class EnemyImpact : ThaiBehaviour
 {
-    protected WeaponController weaponStats;
-    protected override void LoadComponents()
-    {
-        base.LoadComponents();
-        weaponStats = FindObjectOfType<WeaponController>();
-    }
-    public int GetCurrentDamage()
-    {
-        return weaponStats.CurrDamage += FindObjectOfType<PlayerStats>().CurrentStrength;
-    }
+    // protected WeaponController weaponStats;
+    // protected override void LoadComponents()
+    // {
+    //     base.LoadComponents();
+    //     weaponStats = FindObjectOfType<WeaponController>();
+    // }
+    // protected void OnEnable()
+    // {
+    //     weaponStats = FindObjectOfType<WeaponController>();
+    //     GetCurrentDamage();
+    //     Debug.Log(GetCurrentDamage());
+    // }
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         //

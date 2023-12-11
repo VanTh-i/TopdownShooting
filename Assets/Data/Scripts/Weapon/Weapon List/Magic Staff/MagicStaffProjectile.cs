@@ -8,13 +8,21 @@ public class MagicStaffProjectile : EnemyImpact
     private MagicStaff magicStaff;
     private int pierce;
 
-    protected override void LoadComponents()
+    // protected override void LoadComponents()
+    // {
+    //     base.LoadComponents();
+    //     magicStaff = FindObjectOfType<MagicStaff>();
+    // }
+    // private void Start()
+    // {
+    //     pierce = magicStaff.weaponStats.Pierce;
+    // }
+    private void OnEnable()
     {
-        base.LoadComponents();
-        magicStaff = FindObjectOfType<MagicStaff>();
-    }
-    private void Start()
-    {
+        if (magicStaff == null)
+        {
+            magicStaff = FindObjectOfType<MagicStaff>();
+        }
         pierce = magicStaff.weaponStats.Pierce;
     }
 
@@ -35,7 +43,7 @@ public class MagicStaffProjectile : EnemyImpact
 
             if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
             {
-                enemyStats.TakeDamage(GetCurrentDamage(), transform.parent.position);
+                enemyStats.TakeDamage(magicStaff.GetCurrentDamage(), transform.parent.position);
             }
         }
     }

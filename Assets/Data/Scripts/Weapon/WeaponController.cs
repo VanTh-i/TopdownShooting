@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Mono.Cecil.Cil;
 using UnityEngine;
 
 public class WeaponController : ThaiBehaviour
@@ -20,10 +19,6 @@ public class WeaponController : ThaiBehaviour
         set
         {
             currDamage = value;
-            // if (GameManager.Instance != null)
-            // {
-            //     GameManager.Instance.attackDamageDisplay.text = "" + currDamage.ToString("F2");
-            // }
         }
     }
 
@@ -65,6 +60,11 @@ public class WeaponController : ThaiBehaviour
     protected virtual void Attack()
     {
         currHitDelay = hitDelay;
+    }
+
+    public int GetCurrentDamage()
+    {
+        return CurrDamage += FindObjectOfType<PlayerStats>().CurrentStrength;
     }
 
 }

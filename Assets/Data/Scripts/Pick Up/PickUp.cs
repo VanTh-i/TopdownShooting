@@ -8,7 +8,8 @@ public class PickUp : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            PickUpSpawn.Instance.DeSpawn(transform);
         }
     }
 }

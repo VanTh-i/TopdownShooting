@@ -14,15 +14,16 @@ public class EnemyDrop : DropRateManager
             if (random <= drop.dropRate)
             {
                 possibleDrops.Add(drop);
-                //Instantiate(drop.itemPrefab, transform.position, Quaternion.identity);
             }
         }
         if (possibleDrops.Count > 0)
         {
             Drop drop = possibleDrops[Random.Range(0, possibleDrops.Count)];
             if (!gameObject.scene.isLoaded) return;
-            GameObject item = Instantiate(drop.itemPrefab, transform.position, Quaternion.identity);
-            item.transform.parent = poolHolder;
+            // GameObject item = Instantiate(drop.itemPrefab, transform.position, Quaternion.identity);
+            // item.transform.parent = poolHolder;
+            Transform item = PickUpSpawn.Instance.Spawn(drop.itemPrefab.transform, transform.position, Quaternion.identity);
+            item.gameObject.SetActive(true);
         }
     }
 }

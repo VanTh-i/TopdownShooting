@@ -6,16 +6,14 @@ public class Arrow : EnemyImpact
 {
     protected Vector3 direction = Vector3.right;
     private Bow bow;
-
     private int pierce;
 
-    protected override void LoadComponents()
+    private void OnEnable()
     {
-        base.LoadComponents();
-        bow = FindObjectOfType<Bow>();
-    }
-    private void Start()
-    {
+        if (bow == null)
+        {
+            bow = FindObjectOfType<Bow>();
+        }
         pierce = bow.weaponStats.Pierce;
     }
 
@@ -37,7 +35,7 @@ public class Arrow : EnemyImpact
             DestroyObject();
             if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
             {
-                enemyStats.TakeDamage(GetCurrentDamage(), transform.parent.position);
+                enemyStats.TakeDamage(bow.GetCurrentDamage(), transform.parent.position);
             }
 
         }

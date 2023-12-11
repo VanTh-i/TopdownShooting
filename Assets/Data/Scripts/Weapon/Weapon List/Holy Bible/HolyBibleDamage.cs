@@ -6,11 +6,12 @@ public class HolyBibleDamage : EnemyImpact
 {
     private HolyBible holyBible;
 
-    protected override void LoadComponents()
+    private void OnEnable()
     {
-        base.LoadComponents();
-        holyBible = FindObjectOfType<HolyBible>();
-
+        if (holyBible == null)
+        {
+            holyBible = FindObjectOfType<HolyBible>();
+        }
     }
     protected override void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,7 +20,7 @@ public class HolyBibleDamage : EnemyImpact
         {
             if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
             {
-                enemyStats.TakeDamage(GetCurrentDamage(), transform.parent.position);
+                enemyStats.TakeDamage(holyBible.GetCurrentDamage(), transform.parent.position);
             }
             SpawnExplosion();
         }

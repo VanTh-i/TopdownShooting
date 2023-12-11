@@ -5,6 +5,16 @@ using UnityEngine;
 public class SwordProjectile : EnemyImpact
 {
     protected Transform player;
+    private Sword sword;
+
+    private void OnEnable()
+    {
+        if (sword == null)
+        {
+            sword = FindObjectOfType<Sword>();
+        }
+    }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -22,7 +32,7 @@ public class SwordProjectile : EnemyImpact
             SpawnExplosion();
             if (other.gameObject.TryGetComponent(out EnemyStats enemyStats))
             {
-                enemyStats.TakeDamage(GetCurrentDamage(), player.transform.position);
+                enemyStats.TakeDamage(sword.GetCurrentDamage(), player.transform.position);
             }
         }
     }

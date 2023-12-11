@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DropRateManager : ThaiBehaviour
 {
-    protected Transform poolHolder;
 
     [System.Serializable]
     public class Drop
@@ -14,12 +13,6 @@ public class DropRateManager : ThaiBehaviour
         public float dropRate;
     }
     public List<Drop> drops;
-
-    protected override void LoadComponents()
-    {
-        base.LoadComponents();
-        poolHolder = GameObject.Find("Item Drop").GetComponent<Transform>();
-    }
 
     protected virtual void OnDisable()
     {
