@@ -64,7 +64,7 @@ public class WeaponController : ThaiBehaviour
 
     public int GetCurrentDamage()
     {
-        return CurrDamage += FindObjectOfType<PlayerStats>().CurrentStrength;
+        return CurrDamage + FindObjectOfType<PlayerStats>().CurrentStrength;
     }
 
 }

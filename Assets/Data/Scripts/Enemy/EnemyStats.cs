@@ -22,7 +22,7 @@ public class EnemyStats : ThaiBehaviour
     protected SpriteRenderer enemySprite;
     protected EnemyMovement movement;
     private float knockbackForce = 5f;
-    private float knockbackDuration = 0.2f;
+    private float knockbackDuration = 0.15f;
 
     protected override void Awake()
     {
@@ -58,7 +58,10 @@ public class EnemyStats : ThaiBehaviour
     public virtual void TakeDamage(int dmg, Vector2 sourcePosition)
     {
         currentMaxHp -= dmg;
-        StartCoroutine(DamageFlash());
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DamageFlash());
+        }
         DamagePopUp(dmg);
 
         if (knockbackForce > 0)
@@ -82,6 +85,7 @@ public class EnemyStats : ThaiBehaviour
         }
 
     }
+
     protected virtual bool CheckEnemyDead()
     {
         if (currentMaxHp <= 0)

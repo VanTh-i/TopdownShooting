@@ -8065,6 +8065,9 @@ MonoBehaviour:
   - weaponUpgradeIndex: 4
     initialWeapon: {fileID: 3250761060372312328, guid: 5826cd9a709778446a97f3a51305f0d6, type: 3}
     weaponData: {fileID: 11400000, guid: 5ec133bd8cdb96149b5ff19d6bb8b6b0, type: 2}
+  - weaponUpgradeIndex: 5
+    initialWeapon: {fileID: 8223349703922793100, guid: 79ad99aef1be8084f91a5284df45df6a, type: 3}
+    weaponData: {fileID: 11400000, guid: 4037bfe6607269c46b8d6130fd523525, type: 2}
   passiveItemUpgradeOptions:
   - passiveItemUpgradeIndex: 0
     initialPassiveItem: {fileID: 8484751806190869699, guid: f809e73544a9e434094fddad76cc4d72, type: 3}
@@ -16707,7 +16710,7 @@ MonoBehaviour:
   currentSpeed: 0
   experience: 0
   level: 1
-  experienceCap: 50
+  experienceCap: 10
   healthBar: {fileID: 615428216}
   expBar: {fileID: 1683722830}
   levelText: {fileID: 2019521418}
