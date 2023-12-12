@@ -15,9 +15,8 @@ MonoBehaviour:
   name: Magic Staff LV4
   description: Damage increased by 5.
   icon: {fileID: 21300000, guid: b5e860f4ddc34f9479e99e8576ccca3d, type: 3}
-  damage: 25
-  speed: 0
-  hitDelay: 2
+  damage: 20
+  hitDelay: 4
   pierce: 1
   range: 5
   level: 4

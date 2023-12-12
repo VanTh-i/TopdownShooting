@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bow : WeaponController
 {
     public Transform shootPoint;
-    [HideInInspector] public EnemyStats closestEnemy;
 
     protected override void Awake()
     {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 814611493089322155}
   m_Layer: 0
-  m_Name: Fire Ball
+  m_Name: Pyromancer Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,9 +150,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6441669135508842180}
   - component: {fileID: 6441669135508842179}
-  - component: {fileID: 5632464628052512741}
+  - component: {fileID: 1718676048189211381}
   - component: {fileID: 7385098720069555602}
-  - component: {fileID: 895447526522100185}
+  - component: {fileID: 3016310272968417951}
   m_Layer: 0
   m_Name: Damage Impact
   m_TagString: Untagged
@@ -195,9 +195,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!68 &5632464628052512741
-EdgeCollider2D:
+  m_Constraints: 4
+--- !u!58 &1718676048189211381
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -209,31 +209,9 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.48515174, y: -0.26747394}
-  - {x: 0.16872731, y: -0.345306}
-  - {x: -0.15655194, y: -0.29833457}
-  - {x: -0.3780111, y: -0.22072667}
-  - {x: -0.43902037, y: -0.1315862}
-  - {x: -0.470567, y: -0.07181459}
-  - {x: -0.41937295, y: -0.02346646}
-  - {x: -0.40508598, y: 0.1025483}
-  - {x: -0.31277835, y: 0.16806193}
-  - {x: -0.12393538, y: 0.2796159}
-  - {x: 0.040091664, y: 0.31866133}
-  - {x: 0.25097013, y: 0.34427345}
-  - {x: 0.4227308, y: 0.31160164}
-  - {x: 0.5240106, y: 0.20220062}
-  - {x: 0.5785845, y: 0.12015249}
-  - {x: 0.5782599, y: -0.011952236}
-  - {x: 0.5508288, y: -0.16712227}
-  - {x: 0.48146218, y: -0.26217747}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: 0.12, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.41
 --- !u!114 &7385098720069555602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc23de7ce3100f44585aaaa1f164fd63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &895447526522100185
+--- !u!114 &3016310272968417951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,7 +233,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6441669135508842181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fd19a6c868375147bec1f33447eabdd, type: 3}
+  m_Script: {fileID: 11500000, guid: f973af4fb21e1c74fae2eff7e7cdc2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6441669135952016845
@@ -302,5 +280,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7ce8f51e260424c8d9581c5f93c05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponStats: {fileID: 11400000, guid: 4cceb29f2818e5942848998592618bda, type: 2}
-  maxDistance: 30
