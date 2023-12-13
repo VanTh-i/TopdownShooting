@@ -12,8 +12,9 @@ public class PlayerStats : MonoBehaviour
     private int currentMaxHP;
     [SerializeField] private int currentHp;
     private int currentRecovery;
-    [SerializeField] private int currentStrength;
-    [SerializeField] private float currentSpeed;
+    private int currentStrength;
+    [SerializeField] private int currentArmor;
+    private float currentSpeed;
 
     #region Stat Property
     public int CurrentMaxHP
@@ -63,6 +64,18 @@ public class PlayerStats : MonoBehaviour
             {
                 GameManager.Instance.strengthDisplay.text = "+" + currentStrength;
             }
+        }
+    }
+    public int CurrentArmor
+    {
+        get => currentArmor;
+        set
+        {
+            currentArmor = value;
+            // if (GameManager.Instance != null)
+            // {
+            //     GameManager.Instance.strengthDisplay.text = "+" + currentStrength;
+            // }
         }
     }
     public float CurrentSpeed
@@ -122,6 +135,7 @@ public class PlayerStats : MonoBehaviour
         CurrentHp = characterStats.MaxHp;
         CurrentRecovery = characterStats.Recovery;
         CurrentStrength = characterStats.Strength;
+        CurrentArmor = characterStats.Armor;
         CurrentSpeed = characterStats.Speed;
 
         //player Load
@@ -194,7 +208,9 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
-        CurrentHp -= dmg;
+        //CurrentHp -= dmg;
+        CurrentHp -= CalculateDamageTake(dmg);
+        Debug.Log("take " + CalculateDamageTake(dmg) + " dmg");
         StartCoroutine(DamageFlash());
 
         if (CurrentHp <= 0)
@@ -204,6 +220,19 @@ public class PlayerStats : MonoBehaviour
         }
 
         UpdateHealthBar();
+    }
+    private int CalculateDamageTake(int dmg)
+    {
+
+        if (dmg > CurrentArmor)
+        {
+            dmg -= CurrentArmor;
+        }
+        else
+        {
+            dmg = 1; //dmg quai gay ra be hon giap cua ng choi thi van gay 1 dmg.
+        }
+        return dmg;
     }
     protected IEnumerator DamageFlash()
     {

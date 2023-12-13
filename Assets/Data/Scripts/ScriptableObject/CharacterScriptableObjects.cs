@@ -35,6 +35,11 @@ public class CharacterScriptableObjects : ScriptableObject
     public int Strength { get => strength; private set => strength = value; }
 
     [SerializeField]
+    private int armor;
+    public int Armor { get => armor; private set => armor = value; }
+
+
+    [SerializeField]
     private float speed;
     public float Speed { get => speed; private set => speed = value; }
 }

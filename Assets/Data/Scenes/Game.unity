@@ -8081,6 +8081,9 @@ MonoBehaviour:
   - passiveItemUpgradeIndex: 3
     initialPassiveItem: {fileID: 991285730002012387, guid: a7f812b0af90a0148a669a9520587c2d, type: 3}
     passiveItemData: {fileID: 11400000, guid: 87d6b1d7c07da3949b5df15cdccaf48f, type: 2}
+  - passiveItemUpgradeIndex: 4
+    initialPassiveItem: {fileID: 2833609419833797653, guid: 621b2a2cb16741f4cb4e6841c2420ac7, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 760ec048caddac74680625f0ce9d9182, type: 2}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 1646733403}
     upgradeDescriptionDisplay: {fileID: 433717456}
@@ -16712,8 +16715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterStats: {fileID: 0}
   currentHp: 0
-  currentStrength: 0
-  currentSpeed: 0
+  currentArmor: 0
   experience: 0
   level: 1
   experienceCap: 10
