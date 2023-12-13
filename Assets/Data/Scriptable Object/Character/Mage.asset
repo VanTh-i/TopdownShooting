@@ -17,6 +17,6 @@ MonoBehaviour:
   character: {fileID: 3190631486262631244, guid: 35b16aa506f2d8641b2b158939cd69ce, type: 3}
   startingWeapon: {fileID: 1627917390381187812, guid: 4471e8884a85f874b81ca311a075a8d3, type: 3}
   maxHp: 100
-  recovery: 1
+  recovery: 0
   strength: 0
   speed: 3

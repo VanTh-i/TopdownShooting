@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
+  m_fontSize: 27.95
   m_fontSizeBase: 12.14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3933,7 +3933,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
+  m_fontSize: 27.95
   m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5036,7 +5036,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
+  m_fontSize: 27.95
   m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8075,6 +8075,9 @@ MonoBehaviour:
   - passiveItemUpgradeIndex: 1
     initialPassiveItem: {fileID: 5603466087950109293, guid: ff1b33a11d8a67742b0ec432690681da, type: 3}
     passiveItemData: {fileID: 11400000, guid: 0b8720787570dea4ca1c09de2adb65e6, type: 2}
+  - passiveItemUpgradeIndex: 2
+    initialPassiveItem: {fileID: 7598329254066072772, guid: 83d38a766aaa06345b899de6b9d8ed3b, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 75fa4325aca6b994697618c32103d2dd, type: 2}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 1646733403}
     upgradeDescriptionDisplay: {fileID: 433717456}
@@ -9176,7 +9179,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8.65
+  m_fontSize: 22.05
   m_fontSizeBase: 12.14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10778,7 +10781,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
+  m_fontSize: 27.95
   m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11109,7 +11112,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8.6
+  m_fontSize: 21.95
   m_fontSizeBase: 12.14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11929,7 +11932,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
+  m_fontSize: 27.95
   m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12760,7 +12763,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10.4
+  m_fontSize: 26.5
   m_fontSizeBase: 12.14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15526,7 +15529,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.85
+  m_fontSize: 58.15
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15813,7 +15816,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.3
+  m_fontSize: 56.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

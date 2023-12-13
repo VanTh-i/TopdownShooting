@@ -145,7 +145,7 @@ public class PlayerStats : MonoBehaviour
 
         GameManager.Instance.ResultChosenCharacters(characterStats); //show player da choi khi chet
 
-        InvokeRepeating("Recovery", 0f, 5f); // tu hoi phuc moi 2s
+        InvokeRepeating("Recovery", 0f, 5f); // tu hoi phuc moi 5s
 
         UpdateHealthBar();
         UpdateExpBar();
@@ -171,7 +171,7 @@ public class PlayerStats : MonoBehaviour
         if (experience >= experienceCap)
         {
             level++;
-            CurrentMaxHP += 2;
+            //CurrentMaxHP += 2;
             Debug.Log("Level Up to " + level);
             experience -= experienceCap;
 
