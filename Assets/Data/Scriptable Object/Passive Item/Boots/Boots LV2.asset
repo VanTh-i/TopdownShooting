@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Boots LV2
   m_EditorClassIdentifier: 
   name: Boots LV2
-  description: Character moves 20% faster.
+  description: Character moves 10% faster.
   icon: {fileID: 21300000, guid: b08242be202db7e43bfcb1d9056cdb49, type: 3}
-  multipler: 20
+  multipler: 10
   level: 2
   nextLevelPrefab: {fileID: 8484751806190869699, guid: e5e4a7ec1a7d6aa41b8249df5691dba4, type: 3}

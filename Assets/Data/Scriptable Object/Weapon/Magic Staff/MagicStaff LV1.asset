@@ -15,9 +15,10 @@ MonoBehaviour:
   name: Magic Staff LV1
   description: Fires at the nearest enemy.
   icon: {fileID: 21300000, guid: b5e860f4ddc34f9479e99e8576ccca3d, type: 3}
-  damage: 5
-  hitDelay: 4
+  damage: 10
+  projectile: 1
+  hitDelay: 1.5
   pierce: 1
-  range: 5
+  range: 8
   level: 1
   nextLevelPrefab: {fileID: 4255514822295802079, guid: 1812bc70bd460eb4a9bcf99b56e85d10, type: 3}

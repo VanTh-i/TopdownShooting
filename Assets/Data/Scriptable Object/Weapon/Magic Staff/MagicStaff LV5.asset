@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: MagicStaff LV5
   m_EditorClassIdentifier: 
   name: Magic Staff LV5
-  description: Damage increased by 5.
+  description: Damage increased by 2. Fires 1 more projectile.
   icon: {fileID: 21300000, guid: b5e860f4ddc34f9479e99e8576ccca3d, type: 3}
-  damage: 25
-  hitDelay: 4
-  pierce: 1
-  range: 5
+  damage: 24
+  projectile: 3
+  hitDelay: 1.5
+  pierce: 2
+  range: 8
   level: 5
   nextLevelPrefab: {fileID: 4255514822295802079, guid: de7205338df194b4db75dc5dc66de31d, type: 3}

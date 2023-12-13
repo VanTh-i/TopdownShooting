@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyByDistance : Destroy
 {
-    private float maxDistance = 30f;
+    private float maxDistance = 25f;
     //protected float distance = 0f;
     protected Camera mainCam;
 

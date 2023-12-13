@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Arrow LV4
   m_EditorClassIdentifier: 
   name: Arrow LV4
-  description: Damage increased by 10.
+  description: Passes through 1 more enemy.
   icon: {fileID: 21300000, guid: c2a9b8989862a1b46b7d34489da58b4a, type: 3}
-  damage: 40
-  speed: 0
-  hitDelay: 2
-  pierce: 3
-  range: 7
+  damage: 12
+  projectile: 2
+  hitDelay: 1
+  pierce: 2
+  range: 25
   level: 4
   nextLevelPrefab: {fileID: 4255514822295802079, guid: 3679d57310133a842aaec5be9d8f7128, type: 3}

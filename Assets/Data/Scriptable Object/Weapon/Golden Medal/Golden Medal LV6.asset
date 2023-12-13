@@ -15,7 +15,8 @@ MonoBehaviour:
   name: Golden Medal LV6
   description: Base Damage up by 1.
   icon: {fileID: 21300000, guid: 59fa2c6c6a8f888408bfb9f152ffdf9c, type: 3}
-  damage: 10
+  damage: 8
+  projectile: 0
   hitDelay: 3
   pierce: 0
   range: 0.8

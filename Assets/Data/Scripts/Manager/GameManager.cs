@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI maxHPDisplay;
     public TextMeshProUGUI recoveryDisplay;
     public TextMeshProUGUI strengthDisplay;
+    public TextMeshProUGUI armorDisplay;
     public TextMeshProUGUI moveSpeedDisplay;
 
     [Header("Result UI")]

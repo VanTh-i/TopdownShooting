@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Golden Medal LV5
   m_EditorClassIdentifier: 
   name: Golden Medal LV5
-  description: Base Damage up by 1. Base Area up by 20%.
+  description: Base Area up by 20%.
   icon: {fileID: 21300000, guid: 59fa2c6c6a8f888408bfb9f152ffdf9c, type: 3}
-  damage: 9
+  damage: 7
+  projectile: 0
   hitDelay: 3
   pierce: 0
   range: 0.8

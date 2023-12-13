@@ -8,24 +8,28 @@ public class WeaponController : ThaiBehaviour
     [Header("Weapon Stats")]
     public WeaponScriptableObject weaponStats;
     private int currDamage;
+    private int currProjectile;
     public float currHitDelay;
     public float hitDelay;
     [HideInInspector] public float currPierce;
     [HideInInspector] public float currRange;
 
-    public int CurrDamage
-    {
-        get => currDamage;
-        set
-        {
-            currDamage = value;
-        }
-    }
+    // public int CurrDamage
+    // {
+    //     get => currDamage;
+    //     set
+    //     {
+    //         currDamage = value;
+    //     }
+    // }
+    public int CurrDamage { get; set; }
+    public int CurrProjectile { get => currProjectile; set => currProjectile = value; }
 
     protected override void Awake()
     {
         base.Awake();
         CurrDamage = weaponStats.Damage;
+        currProjectile = weaponStats.Projectile;
         hitDelay = weaponStats.HitDelay;
         currPierce = weaponStats.Pierce;
         currRange = weaponStats.Range;

@@ -20,11 +20,19 @@ public class Bow : WeaponController
     protected override void Attack()
     {
         base.Attack();
+        for (int i = 0; i < CurrProjectile; i++)
+        {
+            Vector3 spawnPos = shootPoint.transform.position;
+            float offsetMinDist = 0.5f;
+            Vector3 offset = new Vector3(Random.Range(-offsetMinDist, offsetMinDist), Random.Range(-offsetMinDist, offsetMinDist), 0f);
+            spawnPos += offset;
 
-        Vector3 spawnPos = shootPoint.transform.position;
-        Quaternion rot = shootPoint.transform.rotation;
-        Transform bullet = BulletSpawn.Instance.Spawn(spawnPos, rot, 3);
-        bullet.gameObject.SetActive(true);
+            Quaternion rot = shootPoint.transform.rotation;
+
+            Transform bullet = BulletSpawn.Instance.Spawn(spawnPos, rot, 3);
+            bullet.gameObject.SetActive(true);
+        }
+
     }
 
     private void GetShootPoint()

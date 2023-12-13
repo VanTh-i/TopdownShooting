@@ -13,8 +13,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int currentHp;
     private int currentRecovery;
     private int currentStrength;
-    [SerializeField] private int currentArmor;
-    private float currentSpeed;
+    private int currentArmor;
+    [SerializeField] private float currentSpeed;
+    [SerializeField] private float currentMagnet;
 
     #region Stat Property
     public int CurrentMaxHP
@@ -72,10 +73,10 @@ public class PlayerStats : MonoBehaviour
         set
         {
             currentArmor = value;
-            // if (GameManager.Instance != null)
-            // {
-            //     GameManager.Instance.strengthDisplay.text = "+" + currentStrength;
-            // }
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.armorDisplay.text = "+" + currentArmor;
+            }
         }
     }
     public float CurrentSpeed
@@ -88,6 +89,14 @@ public class PlayerStats : MonoBehaviour
             {
                 GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed.ToString("F2");
             }
+        }
+    }
+    public float CurrentMagnet
+    {
+        get => currentMagnet;
+        set
+        {
+            currentMagnet = value;
         }
     }
 
@@ -137,6 +146,7 @@ public class PlayerStats : MonoBehaviour
         CurrentStrength = characterStats.Strength;
         CurrentArmor = characterStats.Armor;
         CurrentSpeed = characterStats.Speed;
+        CurrentMagnet = characterStats.Magnet;
 
         //player Load
         LoadModel(characterStats.Character);
@@ -155,6 +165,7 @@ public class PlayerStats : MonoBehaviour
         GameManager.Instance.maxHPDisplay.text = "" + currentMaxHP;
         GameManager.Instance.recoveryDisplay.text = "" + currentRecovery;
         GameManager.Instance.strengthDisplay.text = "+" + currentStrength;
+        GameManager.Instance.armorDisplay.text = "+" + currentArmor;
         GameManager.Instance.moveSpeedDisplay.text = "" + currentSpeed.ToString("F2");
 
         GameManager.Instance.ResultChosenCharacters(characterStats); //show player da choi khi chet

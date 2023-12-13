@@ -6,6 +6,10 @@ public class BootsPassiveItem : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        playerStats.CurrentSpeed *= 1 + passiveItemData.Multipler / 100f;
+        playerStats.CurrentSpeed += MagnetMultipler();
+    }
+    private float MagnetMultipler()
+    {
+        return playerStats.characterStats.Speed * (passiveItemData.Multipler / 100f);
     }
 }

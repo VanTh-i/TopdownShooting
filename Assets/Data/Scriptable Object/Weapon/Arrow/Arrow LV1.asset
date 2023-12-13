@@ -16,9 +16,9 @@ MonoBehaviour:
   description: Fire arrow the faced direction.
   icon: {fileID: 21300000, guid: c2a9b8989862a1b46b7d34489da58b4a, type: 3}
   damage: 10
-  speed: 0
-  hitDelay: 2
-  pierce: 3
-  range: 7
+  projectile: 1
+  hitDelay: 1
+  pierce: 1
+  range: 25
   level: 1
   nextLevelPrefab: {fileID: 4255514822295802079, guid: e29464369864b2d4580d2f9c754afdce, type: 3}
