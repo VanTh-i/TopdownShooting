@@ -250,9 +250,9 @@ public class PlayerStats : MonoBehaviour
         UpdateHealthBar();
     }
 
-    private void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
-        healthBar.fillAmount = (float)CurrentHp / characterStats.MaxHp;
+        healthBar.fillAmount = (float)CurrentHp / CurrentMaxHP;
     }
     private void UpdateExpBar()
     {
